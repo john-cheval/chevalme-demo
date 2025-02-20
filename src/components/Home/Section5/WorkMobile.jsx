@@ -20,7 +20,7 @@ const WorkMobile = ({ data }) => {
               key={index}
               className="w-full h-fit   mt-5 sm:mt-0 relative   sm:bg-transparent bg-[#F6F6F4] rounded-[30px]  overflow-hidden"
             >
-              <div className=" w-full relative h-[300px]  object-cover ">
+              <div className=" w-full relative h-full   ">
                 {isVideo(data[key]?.home_image) ? (
                   <video
                     autoPlay
@@ -28,16 +28,16 @@ const WorkMobile = ({ data }) => {
                     muted
                     playsInline
                     controlsList="nodownload"
-                    className="object-center object-cover  rounded-[30px] w-full h-full"
+                    className="object-center object-cover  rounded-[30px] w-full h-auto"
                   >
                     <source src={"./Home/work/card1.mp4"} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 ) : (
                   <Image
-                    src={data[key]?.home_image}
-                    fill={true}
-                    className="object-cover rounded-[30px] h-full w-full"
+                    src={data[key]?.list_page_image?.url}
+                    // fill={true}
+                    className="object-cover rounded-[30px] h-auto w-full"
                     width={0}
                     height={0}
                     sizes="100vw"
@@ -47,7 +47,7 @@ const WorkMobile = ({ data }) => {
               </div>
 
               <div className="flex flex-col items-center pt-4">
-                <h1 className="font-sora   text-center text-3xl  tracking-tighter text-black font-extralight mb-3 ">
+                <h1 className="font-sora   text-center text-3xl sm:text-4xl  tracking-tighter text-black font-extralight mb-3 ">
                   {data[key].home_title.split(" ")[0] +
                     " " +
                     (data[key].home_title.split(" ")[1]

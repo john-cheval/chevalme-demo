@@ -210,11 +210,11 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
 
         <div
           id="playButton"
-          className="absolute inset-0 flex items-center justify-center z-[11115]"
+          className="absolute inset-0  w-full h-full flex items-center justify-center z-[11115]"
           onClick={handleFullscreen}
         >
           <div
-            className="flex items-center justify-center h-fit w-24 sm:w-28 z-20-- xl:w-32 cursor-pointer absolute top-1/2-- left-1/2-- transform-- translate-x-1/2 sm:translate-x-full md:translate-x-1/2 translate-y-1/2-- "
+            className="flex items-center justify-center h-fit-- w-24 sm:w-28 z-20-- xl:w-32 cursor-pointer   "
             onClick={handleFullscreen}
           >
             <Image

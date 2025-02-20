@@ -16,7 +16,7 @@ function Section5({ data }) {
   const router = useRouter();
   const [activeCard, setActiveCard] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -89,18 +89,6 @@ function Section5({ data }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeCard]);
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkScreenSize();
-
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
-
   return (
     <>
       <div
@@ -153,11 +141,7 @@ function Section5({ data }) {
                           </video>
                         ) : (
                           <Image
-                            src={
-                              isMobile
-                                ? data[key]?.list_page_image?.url
-                                : data[key]?.home_image
-                            }
+                            src={data[key]?.home_image}
                             fill={true}
                             className="object-cover rounded-[30px]"
                             alt={data[key].home_title.split(" ")[0]}
@@ -263,11 +247,7 @@ function Section5({ data }) {
                           </video>
                         ) : (
                           <Image
-                            src={
-                              isMobile
-                                ? data[key]?.list_page_image?.url
-                                : data[key]?.home_image
-                            }
+                            src={data[key]?.home_image}
                             fill={true}
                             className="object-cover rounded-[30px]"
                             alt={data[key].home_title.split(" ")[0]}
@@ -377,11 +357,7 @@ function Section5({ data }) {
                           </video>
                         ) : (
                           <Image
-                            src={
-                              isMobile
-                                ? data[key]?.list_page_image?.url
-                                : data[key]?.home_image
-                            }
+                            src={data[key]?.home_image}
                             fill={true}
                             className="object-cover rounded-[30px]"
                           />
@@ -492,12 +468,7 @@ function Section5({ data }) {
                           </video>
                         ) : (
                           <Image
-                            // src={data[key]?.home_image}
-                            src={
-                              isMobile
-                                ? data[key]?.list_page_image?.url
-                                : data[key]?.home_image
-                            }
+                            src={data[key]?.home_image}
                             fill={true}
                             className="object-cover rounded-[30px]"
                           />
@@ -614,11 +585,7 @@ function Section5({ data }) {
                           </video>
                         ) : (
                           <Image
-                            src={
-                              isMobile
-                                ? data[key]?.list_page_image?.url
-                                : data[key]?.home_image
-                            }
+                            src={data[key]?.home_image}
                             fill={true}
                             className="object-cover rounded-[30px]"
                           />

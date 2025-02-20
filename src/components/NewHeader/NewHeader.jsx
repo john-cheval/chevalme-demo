@@ -198,8 +198,6 @@ const NewHeader = () => {
 
   const additionalLinks = ["Craft", "Code", "Convert"];
 
-  // console.log(pathname, "this is the pathname");
-
   return (
     <>
       <header
@@ -232,114 +230,113 @@ const NewHeader = () => {
                 className="hidden lg:flex items-center text-sm font-medium space-x-6 md:space-x-8 lg:space-x-10 uppercase"
               >
                 {navLinks?.map(({ name, path }) => (
-                  <Link key={path} href={path}>
+                  <div key={path}>
                     <p
                       id={path === "/services" ? "servicesLink" : ""}
-                      className={`hover:text-[#D81100] transition-colors duration-300 ${
-                        active?.startsWith(path)
+                      className={`${
+                        active?.startsWith(path) ||
+                        (path === "/services" && active.includes("/service"))
                           ? "text-[#D81100] activeNavLink"
                           : darkBG.includes(pathname)
                             ? "text-white"
                             : "text-black"
                       }`}
                     >
-                      {name}
+                      <Link
+                        className="hover:text-[#D81100] transition-colors duration-300"
+                        href={path}
+                      >
+                        {name}
+                      </Link>
                     </p>
-                  </Link>
+                  </div>
                 ))}
 
-                {/* {navLinks?.map(({ name, path }) => (
-                  <Link key={path} href={path}>
-                    <p
-                      id={
-                        pathname.includes("/service/") && path === "/services"
-                          ? "servicesLink"
-                          : ""
-                      }
-                      className={`hover:text-[#D81100] transition-colors duration-300 ${
-                        active?.startsWith(path) ||
-                        (pathname.includes("/service/") && path === "/services")
-                          ? "text-[#D81100] activeNavLink"
-                          : darkBG.includes(pathname)
-                            ? "text-white"
-                            : "text-black"
+                <div>
+                  <p>
+                    <Link
+                      href={"tel:+971 50 356 0927"}
+                      className={`hover:text-[#D81100] transition-colors duration-300 flex items-center gap-2 font-medium normal-case ${
+                        darkBG.includes(pathname) ? "text-white" : "text-black"
                       }`}
                     >
-                      {name}
-                    </p>
-                  </Link>
-                ))} */}
+                      <Image
+                        className="h-[18px] w-[18px]  object-cover"
+                        src={Phone}
+                        alt="phone"
+                        sizes="100vw"
+                        height={0}
+                        width={0}
+                      />
+                      <span className="hidden lg:block">+971 50 356 0927</span>
+                    </Link>
+                  </p>
+                </div>
 
-                <Link href={"tel:+971 50 356 0927"}>
-                  <p
-                    className={`hover:text-[#D81100] transition-colors duration-300 flex items-center gap-2 font-medium ${
-                      darkBG.includes(pathname) ? "text-white" : "text-black"
-                    }`}
-                  >
-                    <Image
-                      className="h-[18px] w-[18px]  object-cover"
-                      src={Phone}
-                      alt="phone"
-                      sizes="100vw"
-                      height={0}
-                      width={0}
-                    />
-                    <span className="hidden lg:block">+971 50 356 0927</span>
+                <div>
+                  <p>
+                    <Link
+                      href={"mailto:info@chevalme.com"}
+                      className={`hover:text-[#D81100] transition-colors duration-300 flex items-center gap-2 font-medium normal-case ${
+                        darkBG.includes(pathname) ? "text-white" : "text-black"
+                      }`}
+                    >
+                      <Image
+                        className="h-[18px] w-[18px]  object-cover"
+                        src={Mail}
+                        alt="Mail"
+                        sizes="100vw"
+                        height={0}
+                        width={0}
+                      />
+                      <span className="hidden lg:block">info@chevalme.com</span>
+                    </Link>
                   </p>
-                </Link>
-                <Link href={"mailto:info@chevalme.com"}>
-                  <p
-                    className={`hover:text-[#D81100] transition-colors duration-300 flex items-center gap-2 font-medium normal-case ${
-                      darkBG.includes(pathname) ? "text-white" : "text-black"
-                    }`}
-                  >
-                    <Image
-                      className="h-[18px] w-[18px]  object-cover"
-                      src={Mail}
-                      alt="Mail"
-                      sizes="100vw"
-                      height={0}
-                      width={0}
-                    />
-                    <span className="hidden lg:block">info@chevalme.com</span>
-                  </p>
-                </Link>
+                </div>
               </div>
               <div id="navLinks" className="lg:hidden flex gap-6 items-center">
-                <Link href={"tel:+971 50 356 0927"}>
-                  <p
-                    className={`hover:text-[#D81100] transition-colors duration-300 flex items-center gap-2 font-medium ${
-                      darkBG.includes(pathname) ? "text-white" : "text-black"
-                    }`}
-                  >
-                    <Image
-                      className="h-[22px] w-[22px]  object-cover"
-                      src={Phone}
-                      alt="phone"
-                      sizes="100vw"
-                      height={0}
-                      width={0}
-                    />
-                    <span className="hidden sm:block">+971 50 356 0927</span>
+                <div>
+                  <p>
+                    <Link
+                      href={"tel:+971 50 356 0927"}
+                      className={`hover:text-[#D81100] transition-colors duration-300 flex items-center gap-2 font-medium ${
+                        darkBG.includes(pathname) ? "text-white" : "text-black"
+                      }`}
+                    >
+                      <Image
+                        className="h-[22px] w-[22px]  object-cover"
+                        src={Phone}
+                        alt="phone"
+                        sizes="100vw"
+                        height={0}
+                        width={0}
+                      />
+                      <span className="hidden sm:block">+971 50 356 0927</span>
+                    </Link>
                   </p>
-                </Link>
-                <Link href={"mailto:info@chevalme.com"}>
-                  <p
-                    className={`hover:text-[#D81100] transition-colors duration-300 flex items-center gap-2 font-medium ${
-                      darkBG.includes(pathname) ? "text-white" : "text-black"
-                    }`}
-                  >
-                    <Image
-                      className="h-[22px] w-[22px]  object-cover"
-                      src={Mail}
-                      alt="Mail"
-                      sizes="100vw"
-                      height={0}
-                      width={0}
-                    />
-                    <span className="hidden sm:block">info@chevalme.com</span>
+                </div>
+
+                <div>
+                  <p>
+                    <Link
+                      href={"mailto:info@chevalme.com"}
+                      className={`hover:text-[#D81100] transition-colors duration-300 flex items-center gap-2 font-medium ${
+                        darkBG.includes(pathname) ? "text-white" : "text-black"
+                      }`}
+                    >
+                      <Image
+                        className="h-[22px] w-[22px]  object-cover"
+                        src={Mail}
+                        alt="Mail"
+                        sizes="100vw"
+                        height={0}
+                        width={0}
+                      />
+                      <span className="hidden sm:block">info@chevalme.com</span>
+                    </Link>
                   </p>
-                </Link>
+                </div>
+
                 <Image
                   onClick={menuOpen}
                   src={
@@ -414,9 +411,11 @@ const NewHeader = () => {
               return (
                 <div key={name}>
                   <div className="flex justify-center w-full text-center pt-4 items-center cursor-pointer transition-colors duration-300 uppercase">
-                    <Link href={path}>
-                      <p className="text-[30px] uppercase">{name}</p>
-                    </Link>
+                    <p>
+                      <Link href={path} className="text-[30px] uppercase">
+                        {name}
+                      </Link>
+                    </p>
                   </div>
 
                   {name === "Services" &&
@@ -425,9 +424,14 @@ const NewHeader = () => {
                         key={item}
                         className="flex justify-center w-full text-center pt-2 items-center cursor-pointer transition-colors duration-300 uppercase"
                       >
-                        <Link href={`/service?section=${item?.toLowerCase()}`}>
-                          <p className="text-[25px]">{item}</p>
-                        </Link>
+                        <p>
+                          <Link
+                            href={`/services?section=${item?.toLowerCase()}`}
+                            className="text-[25px]"
+                          >
+                            {item}
+                          </Link>
+                        </p>
                       </div>
                     ))}
                 </div>
