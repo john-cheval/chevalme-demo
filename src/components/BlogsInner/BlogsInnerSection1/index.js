@@ -13,12 +13,15 @@ function BlogsInnerSection1({ data }) {
     <div className="relative w-screen h-fit pb-12 pt-36 bg-[#F6F6F4] overflow-x-hidden">
       <div className="relative flex flex-col items-center h-fit px-5 sm:px-10 md:px-12 w-full">
         <div className="relative flex-col space-y-14 flex h-fit items-center justify-center w-full  text-black">
-          <div className="w-full relative h-[528px] ">
+          <div className="w-full relative h-[528px] h-auto-- ">
             <Image
               src={data?.image}
               fill={true}
-              className=" object-cover  object-center  rounded-[2rem]"
+              className=" object-cover  object-center  rounded-[2rem] w-full-- h-auto--"
               alt={data?.post_title}
+              // width={0}
+              // height={0}
+              // sizes="100vw"
             />
             <div className="flex flex-col font-satoshi absolute bottom-0 h-full w-full justify-end bg-gradient-to-b from-50% from-transparent to-[#000] rounded-[2rem] px-10 py-10 text-white">
               <span className="text-[10px] sm:text-xs md:text-sm  font-sora">
@@ -38,6 +41,7 @@ function BlogsInnerSection1({ data }) {
             </div>
           </div>
         </div>
+
         <div className="flex w-full items-center py-10 justify-between">
           <button onClick={() => swiperRef.current?.slidePrev()}>
             <Image

@@ -35,7 +35,7 @@ function BlogsInnerPage({ id }) {
       {/* <Header /> */}
       <NewHeader />
       <BlogsInnerSection1 data={data} />
-      <BlogsInnerSection2 data={data2} />
+      <BlogsInnerSection2 data={data2} blogID={id} />
       <NewFooter />
       {/* <Footer data={footer} /> */}
     </>

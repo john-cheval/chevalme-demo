@@ -58,6 +58,9 @@ function Section10({ data }) {
                   src={arrowBackward}
                   className="w-6 object-contain"
                   alt="arrowBackward"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                 />
               </button>
               <button onClick={() => swiperRef.current?.slideNext()}>
@@ -65,6 +68,9 @@ function Section10({ data }) {
                   src={arrowForward}
                   className="w-6 object-contain"
                   alt="arrow Forward"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                 />
               </button>
             </ChildrenReveal>
@@ -84,14 +90,17 @@ function Section10({ data }) {
                     //   margin: "0 2rem 0 2rem",
                     // }}
                     key={index}
-                    className="w-[10rem] sm:w-[13rem] ml-[0.4rem] sm:ml-[2rem] mr-[0.4rem] sm:mr-[1.5rem] flex-none h-28 max-w-full relative  self-center object-center object-contain"
+                    className="w-[10rem] sm:w-[13rem] ml-[0.4rem] sm:ml-[2rem] mr-[0.4rem] sm:mr-[1.5rem] flex-none h-28-- max-w-full relative  self-center object-center object-contain"
                   >
                     <Image
                       src={item.image}
-                      fill={true}
+                      // fill={true}
                       // objectFit="contain"
-                      className="object-contain"
-                      alt="image"
+                      className="object-contain h-auto w-full"
+                      alt={`image-${index + 1}`}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
                     />
                   </div>
                 ))}

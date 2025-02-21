@@ -214,17 +214,19 @@ const WorkBody = ({ data, categories }) => {
                   }
                 >
                   <div className="relative overflow-x-hidden">
-                    <div className="w-full relative h-[269px] md:h-[360px] lg:h-[419px] object-cover rounded-[2rem] object-center">
+                    <div className="w-full relative  object-cover rounded-[2rem] object-center">
                       <Image
                         src={
                           filterCard?.list_page_image?.url ||
                           filterCard?.home_image
                         }
-                        fill={true}
+                        // fill={true}
                         overrideSrc="/Work/work1.png"
-                        className=" object-cover object-center rounded-[2rem]"
+                        className=" object-cover object-center rounded-[2rem] w-full h-auto"
                         alt="work"
                         sizes="100vw"
+                        width={0}
+                        height={0}
                       />
                     </div>
 

@@ -22,8 +22,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-function BlogsInner({ params }) {
-  return <BlogsInnerPage id={params?.id} />;
+async function BlogsInner({ params }) {
+  const dataID = await params;
+  return <BlogsInnerPage id={dataID?.id} />;
 }
 
 export default BlogsInner;

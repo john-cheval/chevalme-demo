@@ -315,7 +315,7 @@ function Section11({ data, sortedData }) {
               {sortedDataExact?.map(
                 (data, index) =>
                   index === 0 && (
-                    <div key={index}>
+                    <div key={index + 1}>
                       <div className="flex relative col-span-1 mt-12 sm:-mt-14 lg:mt-10 overflow-y-visible justify-end flex-col  font-satoshi text-white h-fit sm:h-[400px] bg-[#101763]  rounded-3xl">
                         <div className="pb-8 pt-14 px-12 ">
                           <h3 className="text-lg sm:text-2xl leading-relaxed font-medium line-clamp-6">
@@ -341,7 +341,7 @@ function Section11({ data, sortedData }) {
               {data?.testimonials?.map(
                 (testi, index) =>
                   index === 2 && (
-                    <div key={index}>
+                    <div key={index + 2}>
                       {testi.video_url && (
                         <>
                           <div className="hidden sm:flex  col-span-1 items-end  font-satoshi text-white h-[600px] lg:h-[500px] lg:-mt-44 relative   rounded-3xl">
@@ -446,7 +446,10 @@ function Section11({ data, sortedData }) {
                           </div>
                         </div>
                       ) : ( */}
-                      <div className="flex relative col-span-1 mt-8 sm:-mt-44 lg:mt-14 overflow-y-visible justify-end flex-col  font-satoshi text-black h-fit sm:h-[400px] border border-black   rounded-3xl">
+                      <div
+                        key={index + 4}
+                        className="flex relative col-span-1 mt-8 sm:-mt-44 lg:mt-14 overflow-y-visible justify-end flex-col  font-satoshi text-black h-fit sm:h-[400px] border border-black   rounded-3xl"
+                      >
                         <div className="pb-8 pt-14 px-12 text-[#101763] ">
                           <h3 className="text-lg sm:text-2xl leading-relaxed font-medium line-clamp-6">
                             {data.text}
@@ -473,7 +476,10 @@ function Section11({ data, sortedData }) {
                     <>
                       {testi.video_url && (
                         <>
-                          <div className="hidden lg:flex  col-span-1 items-end  -mt-10 font-satoshi text-white h-[500px] relative   rounded-3xl">
+                          <div
+                            key={index + 5}
+                            className="hidden lg:flex  col-span-1 items-end  -mt-10 font-satoshi text-white h-[500px] relative   rounded-3xl"
+                          >
                             <video
                               autoPlay={false}
                               // muted

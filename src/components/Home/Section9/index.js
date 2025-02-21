@@ -12,6 +12,7 @@ import arrowForward from "../../../../public/arrow_forward_ios.svg";
 import ChildrenReveal from "@/util/ChildrenReveal";
 import useMediaQuery from "@/util/useMediaQuery";
 import { useRouter } from "next/navigation";
+import truncateHTML from "@/util/truncateText";
 function Section9({ data, title }) {
   const swiperRef = useRef();
   const router = useRouter();
@@ -92,7 +93,7 @@ function Section9({ data, title }) {
                 <SwiperSlide
                   key={index}
                   className=" swiper-slide-fit cursor-pointer "
-                  onClick={() => router.push(`/blogs/${data.id}`)}
+                  onClick={() => router.push(`/blogs/${data.slug}`)}
                 >
                   <div
                     // style={{
@@ -120,7 +121,7 @@ function Section9({ data, title }) {
                         src={data._embedded["wp:featuredmedia"][0].source_url}
                         fill={true}
                         className=" object-cover object-center rounded-lg "
-                        alt="blog"
+                        alt={data?.type}
                       />
                     </div>
                     <button className="font-sora text-[10px] uppercase py-2.5 px-6 w-fit border border-[#D81100] text-[#D81100] rounded-3xl">
@@ -132,7 +133,7 @@ function Section9({ data, title }) {
                     <div>
                       <p
                         dangerouslySetInnerHTML={{
-                          __html: data.content.rendered,
+                          __html: truncateHTML(data.content.rendered),
                         }}
                         className="font-satoshi paragraphText-Size transition-all duration-300 text-[#BFBFBF] group-hover:text-[#101763] line-clamp-3 sm:text-left text-center "
                       ></p>

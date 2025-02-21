@@ -10,9 +10,9 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { format } from "date-fns";
-function BlogsInnerSection2({ data }) {
+function BlogsInnerSection2({ data, blogID }) {
   const router = useRouter();
-
+  console.log(blogID, "this is the Blog Id");
   return (
     <div className="relative w-screen h-fit pb-20 bg-[#F6F6F4] overflow-x-hidden">
       <div className="w-full flex items-center h-fit flex-col">
@@ -46,33 +46,36 @@ function BlogsInnerSection2({ data }) {
                 width: fit-content;
               }
             `}</style>
-            {data?.map((data, index) => (
-              <SwiperSlide
-                key={index}
-                onClick={() => router.push(`/blogs/${data.id}`)}
-                className="swiper-slide-fit cursor-pointer"
-              >
-                <div className="flex flex-col group relative w-[75vw] sm:w-[55vw] md:w-[55vw] lg:w-[35vw]">
-                  <div className="h-[55vw] sm:h-[40vw] md:h-[40vw] lg:h-[25vw] w-full object-cover relative  object-center">
-                    <Image
-                      src={data._embedded["wp:featuredmedia"][0].source_url}
-                      fill={true}
-                      className="rounded-[2rem] object-cover"
-                      alt={data.title.rendered}
-                    />
+
+            {data
+              ?.filter((blog) => blog?.slug !== blogID)
+              .map((data, index) => (
+                <SwiperSlide
+                  key={index}
+                  onClick={() => router.push(`/blogs/${data.slug}`)}
+                  className="swiper-slide-fit cursor-pointer"
+                >
+                  <div className="flex flex-col group relative w-[75vw] sm:w-[55vw] md:w-[55vw] lg:w-[35vw]">
+                    <div className="h-[55vw] sm:h-[40vw] md:h-[40vw] lg:h-[25vw] w-full object-cover relative  object-center">
+                      <Image
+                        src={data._embedded["wp:featuredmedia"][0].source_url}
+                        fill={true}
+                        className="rounded-[2rem] object-cover"
+                        alt={data.title.rendered}
+                      />
+                    </div>
+                    <div className="flex flex-col  px-1 text-black">
+                      <span className=" mt-6 mb-2.5 font-sora text-[10px] sm:text-xs md:text-sm ">
+                        {" "}
+                        {format(new Date(data.date), "EEEE dd MMM")}
+                      </span>
+                      <p className="font-satoshi pl-1 font-medium group-hover:text-[#D81100] duration-500 transition-colors line-clamp-2 text-base sm:text-lg md:text-xl lg:text-2xl text-[#101763]">
+                        {data.title.rendered}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex flex-col  px-1 text-black">
-                    <span className=" mt-6 mb-2.5 font-sora text-[10px] sm:text-xs md:text-sm ">
-                      {" "}
-                      {format(new Date(data.date), "EEEE dd MMM")}
-                    </span>
-                    <p className="font-satoshi pl-1 font-medium group-hover:text-[#D81100] duration-500 transition-colors line-clamp-2 text-base sm:text-lg md:text-xl lg:text-2xl text-[#101763]">
-                      {data.title.rendered}
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
       </div>
