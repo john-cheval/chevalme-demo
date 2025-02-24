@@ -47,7 +47,7 @@ function WorkInnerPage({ innerID }) {
     <>
       <NewHeader />
       <WorkInnerSection1 data={data} />
-      <WorkInnerSection2 data={data2} ID={innerID?.id} />
+      <WorkInnerSection2 data={data2} ID={innerID?.id} link="/projects" />
       <Section10 data={clients} />
       <NewFooter />
     </>
