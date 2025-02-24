@@ -1,6 +1,5 @@
 /** @format */
 "use client";
-import Header from "@/components/Header";
 import React from "react";
 import LoadingAnimation from "@/util/LoadingAnimation";
 import useFetch from "@/hooks/useFetch";

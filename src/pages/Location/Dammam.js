@@ -2,7 +2,6 @@
 "use client";
 // import Footer from "@/components/Footer";
 import NewFooter from "@/components/Footer/NewFooter";
-import Header from "@/components/Header";
 import Section1 from "@/components/Location/Dammam/Section1";
 import Section2 from "@/components/Location/Dammam/Section2";
 import Section3 from "@/components/Location/Dammam/Section3";
