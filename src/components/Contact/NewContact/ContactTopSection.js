@@ -77,12 +77,6 @@ const ContactHeader = () => {
                 style={{
                   height: `${index === 1 || index === 4 ? "200px" : "250px"}`,
                 }}
-                // className="object-contain w-[12vw] sm:w-[10vw] md:w-[7vw] lg:w-[5vw] xl:w-[4vw]"
-                // style={{
-                //   width: "auto",
-                //   height: "auto",
-                //   maxHeight: `${index === 1 || index === 4 ? "200px" : "250px"}`,
-                // }}
               />
             </div>
           ))}
