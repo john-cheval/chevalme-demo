@@ -1,7 +1,7 @@
 /** @format */
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 
 import arrowBackward from "../../../../public/arrow_backward_ios.svg";
 import arrowForward from "../../../../public/arrow_forward_ios.svg";
@@ -19,9 +19,6 @@ function BlogsInnerSection1({ data }) {
               fill={true}
               className=" object-cover  object-center  rounded-[2rem] w-full-- h-auto--"
               alt={data?.post_title}
-              // width={0}
-              // height={0}
-              // sizes="100vw"
             />
             <div className="flex flex-col font-satoshi absolute bottom-0 h-full w-full justify-end bg-gradient-to-b from-50% from-transparent to-[#000] rounded-[2rem] px-10 py-10 text-white">
               <span className="text-[10px] sm:text-xs md:text-sm  font-sora">

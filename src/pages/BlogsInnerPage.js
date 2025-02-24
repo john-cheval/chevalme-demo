@@ -3,12 +3,10 @@
 import BlogsInnerSection1 from "@/components/BlogsInner/BlogsInnerSection1";
 import BlogsInnerSection2 from "@/components/BlogsInner/BlogsInnerSection2";
 import NewFooter from "@/components/Footer/NewFooter";
-import Header from "@/components/Header";
 import NewHeader from "@/components/NewHeader/NewHeader";
 import useFetch from "@/hooks/useFetch";
 import LoadingAnimation from "@/util/LoadingAnimation";
 import React, { useEffect, useState } from "react";
-// import Footer from "@/components/Footer";
 
 function BlogsInnerPage({ id }) {
   const [loading, setLoading] = useState(true);
@@ -32,12 +30,10 @@ function BlogsInnerPage({ id }) {
     </>
   ) : (
     <>
-      {/* <Header /> */}
       <NewHeader />
       <BlogsInnerSection1 data={data} />
       <BlogsInnerSection2 data={data2} blogID={id} />
       <NewFooter />
-      {/* <Footer data={footer} /> */}
     </>
   );
 }
