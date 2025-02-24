@@ -2,7 +2,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import forwardIcon from "../../../../public/arrow_forward.png";
-import work4 from "../../../../public/Work/work4.png";
+// import work4 from "../../../../public/Work/work4.png";
 import Image from "next/image";
 
 import { useGSAP } from "@gsap/react";

@@ -3,7 +3,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import work4 from "../../../../public/Work/work4.png";
+// import work4 from "../../../../public/Work/work4.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import arrowBackward from "../../../../public/arrow_backward_ios.svg";

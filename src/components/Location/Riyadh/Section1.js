@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import image from "../../../../public/Rectangle 140.png";
+// import image from "../../../../public/Rectangle 140.png";
 import Image from "next/image";
 import mall from "../../../../public/local_mall.svg";
 import shipping from "../../../../public/local_shipping.svg";

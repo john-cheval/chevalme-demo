@@ -60,12 +60,9 @@ module.exports = {
         "footer-gradient":
           "linear-gradient(180deg, rgba(0, 0, 0, 0.67) 0%, #000 100%);",
         "footer-bg": "url('/Footer/Group363.png')",
-        "footer-bg-gradient": "url('/Footer/Ellips.svg')",
-        "about-gradient": "url('/About/gradient.png')",
         "about-member-gradient":
           "linear-gradient(180deg, #F3F3F3 0%, #FFF 100%)",
-        "about-cta-bg": "url('/About/cta-gradient.png')",
-        "service-header-bg": "url('/Services/serviceOveray.png')",
+
         "serviceinner-cta-bg-overlay": "url('/ServicesInner/cta-overlay.svg')",
         "work-header-gradient":
           "linear-gradient(180deg, rgba(0, 0, 0, 0.43) 8.14%, rgba(0, 0, 0, 0.00) 140.64%)",

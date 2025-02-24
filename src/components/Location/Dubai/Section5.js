@@ -2,9 +2,9 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import event1 from "../../../../public/event1.png";
-import event2 from "../../../../public/event2.png";
-import event3 from "../../../../public/event3.png";
+// import event1 from "../../../../public/event1.png";
+// import event2 from "../../../../public/event2.png";
+// import event3 from "../../../../public/event3.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
@@ -29,14 +29,14 @@ function Section5({ data }) {
   const cardMultiplier = isMobileSm
     ? 1
     : isMobile
-    ? 1
-    : isTablet
-    ? 2
-    : isLarge
-    ? 2.5
-    : isXL
-    ? 3
-    : 3;
+      ? 1
+      : isTablet
+        ? 2
+        : isLarge
+          ? 2.5
+          : isXL
+            ? 3
+            : 3;
 
   useEffect(() => {
     console.log(data);
@@ -56,9 +56,9 @@ function Section5({ data }) {
               y={20}
               styling="font-sora text-center sm:text-left leading-5 font-semibold leading-tight text-[#101763] text-3xl sm:text-4xl md:text-5xl lg:text-[50px]"
             >
-              <span >Curious by nature, shaping new</span> <br />{" "}
+              <span>Curious by nature, shaping new</span> <br />{" "}
               <ChildrenReveal styling="text-[#757575] leading-[1.5]">
-              thoughts and ideas
+                thoughts and ideas
               </ChildrenReveal>
             </ChildrenReveal>
             <ChildrenReveal

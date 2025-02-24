@@ -1,6 +1,6 @@
 /** @format */
 "use client";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 import NewFooter from "@/components/Footer/NewFooter";
 import Header from "@/components/Header";
 import Section1 from "@/components/Location/Riyadh/Section1";

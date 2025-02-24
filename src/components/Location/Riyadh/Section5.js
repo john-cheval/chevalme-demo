@@ -2,9 +2,9 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import event1 from "../../../../public/event1.png";
-import event2 from "../../../../public/event2.png";
-import event3 from "../../../../public/event3.png";
+// import event1 from "../../../../public/event1.png";
+// import event2 from "../../../../public/event2.png";
+// import event3 from "../../../../public/event3.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
@@ -29,14 +29,14 @@ function Section5({ data }) {
   const cardMultiplier = isMobileSm
     ? 1
     : isMobile
-    ? 1
-    : isTablet
-    ? 2
-    : isLarge
-    ? 2.5
-    : isXL
-    ? 3
-    : 3;
+      ? 1
+      : isTablet
+        ? 2
+        : isLarge
+          ? 2.5
+          : isXL
+            ? 3
+            : 3;
 
   useEffect(() => {
     console.log(data);

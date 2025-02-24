@@ -288,13 +288,6 @@ input:checked + label .descriptions {
   transform: translateY(0) !important;
 }
 
-#c1:checked ~ .containers .card:nth-child(1),
-#c2:checked ~ .containers .card:nth-child(2),
-#c3:checked ~ .containers .card:nth-child(3),
-#c4:checked ~ .containers .card:nth-child(4) {
-  background-image: url("../../public/About/Girish.png");
-}
-
 .cards.active {
   width: 51%;
   background-image: none !important;

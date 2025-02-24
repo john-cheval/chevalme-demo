@@ -4,7 +4,7 @@ import NewFooter from "@/components/Footer/NewFooter";
 import NewHeader from "@/components/NewHeader/NewHeader";
 import SeoSectionOne from "@/components/SeoPage/SeoSectionOne";
 import SeoSectionTwo from "@/components/SeoPage/SeoSectionTwo";
-import ServicesInnerSection1 from "@/components/ServicesInner/ServicesInnerSection1";
+// import ServicesInnerSection1 from "@/components/ServicesInner/ServicesInnerSection1";
 import LoadingAnimation from "@/util/LoadingAnimation";
 import React, { useEffect, useState } from "react";
 

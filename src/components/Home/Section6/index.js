@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import caseimg1 from "../../../../public/caseimg1.png";
-import caseimg2 from "../../../../public/caseimg2.png";
-import caseimg3 from "../../../../public/caseimg3.png";
-import caseimg4 from "../../../../public/caseimg4.png";
-import caseimg5 from "../../../../public/caseimg5.png";
-import caseimg6 from "../../../../public/caseimg6.png";
+// import caseimg1 from "../../../../public/caseimg1.png";
+// import caseimg2 from "../../../../public/caseimg2.png";
+// import caseimg3 from "../../../../public/caseimg3.png";
+// import caseimg4 from "../../../../public/caseimg4.png";
+// import caseimg5 from "../../../../public/caseimg5.png";
+// import caseimg6 from "../../../../public/caseimg6.png";
 import ChildrenReveal from "@/util/ChildrenReveal";
 import { MaskText } from "@/util/MaskText";
 import Link from "next/link";
