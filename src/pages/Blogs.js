@@ -2,12 +2,10 @@
 "use client";
 import BlogsSection1 from "@/components/Blogs/BlogsSection1";
 import NewFooter from "@/components/Footer/NewFooter";
-import Header from "@/components/Header";
 import NewHeader from "@/components/NewHeader/NewHeader";
 import useFetch from "@/hooks/useFetch";
 import LoadingAnimation from "@/util/LoadingAnimation";
 import React, { useEffect, useState } from "react";
-// import Footer from "@/components/Footer";
 
 function BlogsPage() {
   const [loading, setLoading] = useState(true);
@@ -29,11 +27,9 @@ function BlogsPage() {
     </>
   ) : (
     <>
-      {/* <Header /> */}
       <NewHeader />
       <BlogsSection1 data={data} />
       <NewFooter />
-      {/* <Footer data={footer} /> */}
     </>
   );
 }

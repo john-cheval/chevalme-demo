@@ -9,7 +9,7 @@ import footerLine from "../../../public/Footer/footer_line.svg";
 import FooterMobile from "./FooterMobile";
 import { location, ourServices } from "@/data/FooterLinks";
 
-const NewFooter = ({ footerData }) => {
+const NewFooter = () => {
   return (
     <footer className="relative z-[1000] w-screen h-fit  text-white overflow-hidden bg-black md:bg-footer-bg  bg-conver bg-no-repeat   ">
       {/* Overlay Ellips */}
@@ -132,11 +132,6 @@ const NewFooter = ({ footerData }) => {
                         +971 50 356 0927
                       </p>
                     </Link>
-                    {/* <Link className="cursor-pointer" href={"tel:+97145516085"}>
-                      <p className="font-satoshi font-normal text-xs border-b border-b-transparent hover:border-b-transparent hover:text-[#d81100] duration-300 transition-all sm:text-sm md:text-base text-white leading-[2.3] sm:leading-[2.2] md:leading-[2.3]">
-                        +971 45 51 6085
-                      </p>
-                    </Link> */}
 
                     <Link
                       target="_blank"
@@ -220,15 +215,6 @@ const NewFooter = ({ footerData }) => {
               </div>
 
               <div className="col-span-6 flex  w-full  items-end justify-end">
-                {/* <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57787.433334419904!2d55.16559858442186!3d25.1453385510925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f699813fd9451%3A0xc4b554ceb43cff51!2sCheval%20ME!5e0!3m2!1sen!2sin!4v1695555265331!5m2!1sen!2sin"
-                  title="Best Web Solution Agency in UAE"
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className=" max-w-[350px]-- xl:w-full-- w-full h-[210px]  rounded-[10px] "
-                ></iframe> */}
-
                 <Link
                   href={"#"}
                   className="h-[70px]  w-[70px] rounded-full  items-center justify-center border border-white hover:border-[#d81100] duration-300 transition-all  flex  justify-self-end "

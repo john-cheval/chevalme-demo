@@ -4,12 +4,10 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import arrowBackward from "../../../../public/arrow_backward_ios.svg";
 import arrowForward from "../../../../public/arrow_forward_ios.svg";
-import { MaskText } from "@/util/MaskText";
 import ChildrenReveal from "@/util/ChildrenReveal";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 function AboutClientMobile({ data }) {
-  // console.log(data, "this is the client");
   const duplicatedData = [...data, ...data];
   const swiperRef = useRef();
   useGSAP(() => {
@@ -64,20 +62,9 @@ function AboutClientMobile({ data }) {
           </div>
           <ChildrenReveal x={20} y={0} styling="relative  w-full">
             <div className="overflow-hidden md:pt-12 w-full">
-              <div
-                // style={{
-                // animation: "ticker-kf-clients 10s linear infinite",
-                // }}
-                id="clientAnimation"
-                className="flex ml-[-1rem] mr-[-1rem]"
-              >
+              <div id="clientAnimation" className="flex ml-[-1rem] mr-[-1rem]">
                 {duplicatedData?.map((item, index) => (
-                  <div
-                    // style={{
-                    //   margin: "0 2rem 0 2rem",
-                    // }}
-                    className="w-[8rem] sm:w-[12rem] ml-[1rem] sm:ml-[2rem] mr-[1rem] sm:mr-[1.5rem] flex-none h-28 max-w-full relative  self-center object-center object-contain"
-                  >
+                  <div className="w-[8rem] sm:w-[12rem] ml-[1rem] sm:ml-[2rem] mr-[1rem] sm:mr-[1.5rem] flex-none h-28 max-w-full relative  self-center object-center object-contain">
                     <Image
                       src={item.image}
                       fill={true}

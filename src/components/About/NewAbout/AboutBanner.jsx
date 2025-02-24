@@ -13,7 +13,7 @@ import useMediaQuery from "@/util/useMediaQuery";
 
 const randomImageSrc = () =>
   aboutBannerImages[Math.floor(Math.random() * aboutBannerImages.length)].src;
-const AboutBanner = ({ bannerData, bannerVideo, bannerPopupVideo }) => {
+const AboutBanner = ({ bannerData, bannerPopupVideo }) => {
   const [playVideo, setPlayVideo] = useState(false);
   const aboutSectionCards = useRef(null);
   const aboutSectionCardsMain = useRef(null);
