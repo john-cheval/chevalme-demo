@@ -107,19 +107,19 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
         duration: 0.1,
         ease: "none",
       })
-      .to(
-        "#maskImage",
-        {
-          maskSize: window.matchMedia("(max-width: 640px)").matches
-            ? "5000%"
-            : "4000%",
-          maskPositionX: window.matchMedia("(max-width: 640px)").matches
-            ? "57.5%"
-            : "55%",
-          ease: "none",
-        },
-        "<"
-      )
+      // .to(
+      //   "#maskImage",
+      //   {
+      //     maskSize: window.matchMedia("(max-width: 640px)").matches
+      //       ? "5000%"
+      //       : "4000%",
+      //     maskPositionX: window.matchMedia("(max-width: 640px)").matches
+      //       ? "57.5%"
+      //       : "55%",
+      //     ease: "none",
+      //   },
+      //   "<"
+      // )
       .to("#section-text", {
         opactity: 0,
         visibility: "hidden",
@@ -186,13 +186,13 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
         className="relative w-screen h-[100dvh] overflow-hidden"
       >
         <div
-          style={{
-            maskImage: "url(/Cheval.svg)",
-            // maskPosition: isMobile ? "50% 54%" : "50% 89%",
-            maskPosition: isMobile ? "50% 54%" : "50% 93%",
-            maskRepeat: "no-repeat",
-            maskSize: "78%",
-          }}
+          // style={{
+          //   maskImage: "url(/Cheval.svg)",
+          //   // maskPosition: isMobile ? "50% 54%" : "50% 89%",
+          //   maskPosition: isMobile ? "50% 54%" : "50% 93%",
+          //   maskRepeat: "no-repeat",
+          //   maskSize: "78%",
+          // }}
           id="maskImage"
           className="absolute top-0 heroSectionBigText  left-0 w-screen md:h-[100dvh] flex items-center justify-center z-50 "
         >
