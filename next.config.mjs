@@ -3,6 +3,8 @@
  * @type {import('next').NextConfig}
  */
 
+import TerserPlugin from "terser-webpack-plugin";
+
 const nextConfig = {
   trailingSlash: true,
   async rewrites() {
@@ -49,6 +51,11 @@ const nextConfig = {
       },
     ],
   },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
+
   webpack(config) {
     // Add support for handling videos and GIF files
     config.module.rules.push({

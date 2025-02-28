@@ -13,16 +13,16 @@ export default function RootLayout({ children }) {
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-11182646972"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-E4N6B3LXG2"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         </Script>
 
         {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        <Script id="google-tag-manager" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){
               w[l]=w[l]||[];
@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        <Script id="google-tag-manager-2" strategy="afterInteractive">
+        <Script id="google-tag-manager-2" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){
               w[l]=w[l]||[];
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        <Script id="google-tag-manager" strategy="lazyOnload">
           {`
     (function(w,d,s,l,i){
       w[l]=w[l]||[];
@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
     })(window,document,'script','dataLayer','GTM-KMNRTFC2');
   `}
         </Script>
-        <Script id="gtag-conversion" strategy="afterInteractive">
+        <Script id="gtag-conversion" strategy="lazyOnload">
           {`
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -99,7 +99,7 @@ export default function RootLayout({ children }) {
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-11319129226"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
         <meta property="og:type" content="website" />
@@ -128,7 +128,7 @@ export default function RootLayout({ children }) {
           </noscript>
 
           {/* Google Tag Manager */}
-          <Script id="google-tag-manager" strategy="afterInteractive">
+          <Script id="google-tag-manager" strategy="lazyOnload">
             {`
             (function(w,d,s,l,i){
               w[l]=w[l]||[];
@@ -141,7 +141,7 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-KMNRTFC2');
           `}
           </Script>
-          <Script id="google-tag-manager-2" strategy="afterInteractive">
+          <Script id="google-tag-manager-2" strategy="lazyOnload">
             {`
             (function(w,d,s,l,i){
               w[l]=w[l]||[];
@@ -156,14 +156,14 @@ export default function RootLayout({ children }) {
           </Script>
 
           {/* LinkedIn Insight Tag */}
-          <Script id="linkedin-insight" strategy="afterInteractive">
+          <Script id="linkedin-insight" strategy="lazyOnload">
             {`
             _linkedin_partner_id = "6408778";
             window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
             window._linkedin_data_partner_ids.push(_linkedin_partner_id);
           `}
           </Script>
-          <Script id="linkedin-insight-script" strategy="afterInteractive">
+          <Script id="linkedin-insight-script" strategy="lazyOnload">
             {`
             (function(l) {
               if (!l){
@@ -190,14 +190,14 @@ export default function RootLayout({ children }) {
           </noscript>
 
           {/* Contact Form 7 Event Tracking */}
-          <Script id="wpcf7-event" strategy="afterInteractive">
+          <Script id="wpcf7-event" strategy="lazyOnload">
             {`
             document.addEventListener("wpcf7mailsent", function(event) {
               window.location = "https://chevalme.com/thank-you/";
             }, false);
           `}
           </Script>
-          <Script id="wpcf7-datalayer" strategy="afterInteractive">
+          <Script id="wpcf7-datalayer" strategy="lazyOnload">
             {`
             document.addEventListener("wpcf7mailsent", function(event) {
               window.dataLayer.push({
