@@ -1,7 +1,5 @@
-import Buttons from "@/components/Buttons";
 import DarkButton from "@/components/Buttons/DarkButton";
 import Image from "next/image";
-import arrowForward from "../../../../public/arrow_forward.png";
 import React from "react";
 
 const WorkMobile = ({ data }) => {
@@ -36,7 +34,6 @@ const WorkMobile = ({ data }) => {
                 ) : (
                   <Image
                     src={data[key]?.list_page_image?.url}
-                    // fill={true}
                     className="object-cover rounded-[30px] h-auto w-full"
                     width={0}
                     height={0}
@@ -82,10 +79,10 @@ const WorkMobile = ({ data }) => {
                   onClick={() =>
                     router.push(`/projects/${data[key]?.post_name}`)
                   }
-                  className={`w-full md:hidden   h-fit pb-4 sm:pb-5 border-b group ${data[key]?.ID === 2590 ? "border-b-0" : "border-b"}  cursor-pointer border-black  border-dotted flex items-center justify-center`}
+                  className={`w-full md:hidden   h-fit pb-6  border-b group ${data[key]?.ID === 2590 ? "border-b-0" : "border-b"}  cursor-pointer border-black  border-dotted flex items-center justify-center`}
                 >
                   <DarkButton
-                    link={`/projects/${data[key].post_title}`}
+                    link={`/projects/${data[key]?.post_name}`}
                     text={"View Case Study"}
                   />
                 </div>

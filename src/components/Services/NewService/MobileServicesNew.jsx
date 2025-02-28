@@ -44,7 +44,14 @@ const MobileServicesNew = () => {
       const targetRef = sectionRefs[section.toLowerCase()];
       if (targetRef?.current) {
         setTimeout(() => {
-          targetRef.current.scrollIntoView({
+          // targetRef.current.scrollIntoView({
+          //   behavior: "smooth",
+          // });
+          const el = document.getElementById(targetRef?.current.id);
+          const y = el.getBoundingClientRect().top - 100;
+          window.scrollBy({
+            top: y,
+            left: 0,
             behavior: "smooth",
           });
           setActive(section.toLowerCase());
@@ -84,7 +91,31 @@ const MobileServicesNew = () => {
           {["craft", "code", "convert"].map((section) => (
             <Link
               key={section}
-              href={`/service?section=${section}`}
+              href={`/services?section=${section}`}
+              onClick={(e) => {
+                e.preventDefault();
+                setActive(section);
+
+                const targetRef = {
+                  craft: craftRef,
+                  code: codeRef,
+                  convert: convertRef,
+                }[section];
+
+                if (targetRef?.current) {
+                  const yOffset = -120;
+                  const y =
+                    targetRef.current.getBoundingClientRect().top +
+                    window.pageYOffset +
+                    yOffset;
+
+                  window.scrollTo({ top: y, behavior: "smooth" });
+
+                  setTimeout(() => {
+                    setActive(section);
+                  }, 600);
+                }
+              }}
               className={`font-sora text-2xl sm:text-3xl font-semibold leading-[139%] ${
                 active === section
                   ? "service-Heading-Gradient"

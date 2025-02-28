@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { MaskText } from "@/util/MaskText";
 import useMediaQuery from "@/util/useMediaQuery";
 
 function Section2({ title, description, countdown }) {
@@ -66,19 +65,16 @@ function Section2({ title, description, countdown }) {
   return (
     <div
       id="mainSection2"
-      className="relative w-screen h-fit sm:h-[100dvh]-- bg-[#f6f6f4] overflow-x-hidden- pt-12  md:pt-14 "
+      className="relative w-screen h-fit sm:h-[100dvh]-- bg-[#f6f6f4] overflow-x-hidden- pt-12 md:py-[100px]"
     >
       <div className="relative max-w-screen mx-auto h-fit  sm:h-[100dvh]-- w-full">
-        {/* <div
-          id="pinnedSection"
-          className="max-w-screen sm:pt-0 md:pt-[4vh] flex flex-col  h-[100dvh] relative overflow-hidden  w-full"
-        > */}
         <div
           id="pinnedSection"
           className="max-w-screen  flex flex-col  h-[100dvh]-- relative overflow-hidden-  w-full"
         >
           <div className="max-w-screen px-5  sm:px-10 md:px-12  h-fit-- sm:h-[70vh]-- xl:h-[75vh] justify-center items-center mx-auto flex flex-row overflow-y-visible overflow-x-visible w-full">
-            <div className="flex h-fit--  justify-between space-x-2   w-full flex-col md:flex-row">
+            <div className="flex h-fit--  justify-between space-x-2   w-full flex-col md:flex-row"
+            >
               <div className="flex  flex-col h-fit  space-y-2 sm:space-y-4-- md:space-y-3-- w-full items-center  sm:max-w-fit--   justify-center sm:items-start sm:justify-start md:w-1/2  ">
                 <h2
                   className="font-sora md:tracking-tighter  text-center md:text-left font-medium text-3xl  sm:text-4xl lg:text-5xl xl:text-[54px] text-[#101763]"
@@ -127,8 +123,8 @@ function Section2({ title, description, countdown }) {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 

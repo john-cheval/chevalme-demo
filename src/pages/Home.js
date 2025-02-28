@@ -113,14 +113,14 @@ export default function HomePage() {
   ) : (
     <>
       <NewHeader />
-      {homeContent && (
+      {homeContent && homeContent.web_title && (
         <Section1
-          title={homeContent?.web_title}
-          subTitle={homeContent?.web_sub_title}
-          linkText={homeContent?.web_link_text}
-          link={homeContent?.web_link}
-          fullVideo={homeContent?.web_video}
-          shortVideo={homeContent?.web_video_short}
+          title={homeContent.web_title}
+          subTitle={homeContent.web_sub_title}
+          linkText={homeContent.web_link_text}
+          link={homeContent.web_link}
+          fullVideo={homeContent.web_video}
+          shortVideo={homeContent.web_video_short}
         />
       )}
 

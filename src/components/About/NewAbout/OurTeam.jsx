@@ -4,15 +4,15 @@ import linkedin from "../../../..//public/About/Group.png";
 import Image from "next/image";
 import Link from "next/link";
 import OurTeamMobile from "./OurTeamMobile";
-import gradient from "../../../../public/About/memberGradient.svg";
+// import gradient from "../../../../public/About/memberGradient.svg";
 import OurValues from "./OurValues";
 
 const OurTeam = ({ title, team, data }) => {
-  const [activeCard, setActiveCard] = useState(0);
+  // const [activeCard, setActiveCard] = useState(0);
 
-  const handleCardClick = (id) => {
-    setActiveCard(id);
-  };
+  // const handleCardClick = (id) => {
+  //   setActiveCard(id);
+  // };
 
   return (
     <div
@@ -27,54 +27,55 @@ const OurTeam = ({ title, team, data }) => {
         {team?.map((item, index) => (
           <div
             key={index}
-            className={`cards ${activeCard === index ? "active" : ""}`}
-            onClick={() => handleCardClick(index)}
-            style={{
-              backgroundImage: `url(${item?.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
+            // className={`cards ${activeCard === index ? "active" : ""}`}
+            className="cards active"
+            // onClick={() => handleCardClick(index)}
+            // style={{
+            //   backgroundImage: `url(${item?.image})`,
+            //   backgroundSize: "cover",
+            //   backgroundPosition: "center",
+            // }}
           >
-            {activeCard === index && (
-              <>
-                <div className="image-container">
-                  <Image
-                    className="card-image"
-                    src={item?.image}
-                    alt={item?.title}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                  />
-                </div>
-                <div className="content font-satoshi">
-                  <h1>{item?.title}</h1>
-                  <h3>{item?.position}</h3>
-                  <p
-                    className="space-y-3"
-                    dangerouslySetInnerHTML={{ __html: item?.description }}
-                  ></p>
+            {/* {activeCard === index && ( */}
+            <>
+              <div className="image-container">
+                <Image
+                  className="card-image"
+                  src={item?.image}
+                  alt={item?.title}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                />
+              </div>
+              <div className="content font-satoshi">
+                <h1>{item?.title}</h1>
+                <h3>{item?.position}</h3>
+                <p
+                  className="space-y-3"
+                  dangerouslySetInnerHTML={{ __html: item?.description }}
+                ></p>
 
-                  {item?.linkedin_link && (
-                    <Link
-                      href={item?.linkedin_link}
-                      className="h-12 w-12 flex items-center justify-center border rounded-full mt-5"
-                    >
-                      <Image
-                        src={linkedin}
-                        alt="linkedin"
-                        className="w-4 h-auto"
-                        height={0}
-                        width={0}
-                        sizes="100vw"
-                      />
-                    </Link>
-                  )}
-                </div>
-              </>
-            )}
+                {item?.linkedin_link && (
+                  <Link
+                    href={item?.linkedin_link}
+                    className="h-12 w-12 flex items-center justify-center border rounded-full mt-5"
+                  >
+                    <Image
+                      src={linkedin}
+                      alt="linkedin"
+                      className="w-4 h-auto"
+                      height={0}
+                      width={0}
+                      sizes="100vw"
+                    />
+                  </Link>
+                )}
+              </div>
+            </>
+            {/* )} */}
 
-            {activeCard !== index && (
+            {/* {activeCard !== index && (
               <div className="non-active-content font-satoshi relative">
                 <h1 className=" mr-[20px] xl:mr-[47px] mt-10 z-20">
                   {item?.title}
@@ -92,7 +93,7 @@ const OurTeam = ({ title, team, data }) => {
                   />
                 </div>
               </div>
-            )}
+            )} */}
           </div>
         ))}
       </div>
@@ -101,9 +102,7 @@ const OurTeam = ({ title, team, data }) => {
         <OurTeamMobile team={team} />
       </div>
 
-      <div>
-        <OurValues valuesData={data} />
-      </div>
+      <OurValues valuesData={data} />
     </div>
   );
 };

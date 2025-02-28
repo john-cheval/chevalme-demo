@@ -1,22 +1,9 @@
 import React from "react";
 import WorkPage from "../../pages/Work";
+import generateMetadataData from "@/util/generateMetaTitle";
 
-export async function generateMetadata(parent) {
-  const data = await fetch(
-    `https://d331b20430.nxcli.net/chevalapi/wp-json/custom/v1/projects`
-  ).then((res) => res.json());
-
-  return {
-    title:
-      data?.meta_title ||
-      "Best Web Developers in Dubai | Software Developers in Dubai",
-    description:
-      data?.meta_description ||
-      "Best Web Developers in Dubai | Software Developers in Dubai",
-    alternates: {
-      canonical: `https://chevalme.com/projects/`,
-    },
-  };
+export async function generateMetadata() {
+  return await generateMetadataData(96, `projects`, false);
 }
 const Work = () => {
   return <WorkPage />;

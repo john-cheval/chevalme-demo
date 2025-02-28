@@ -5,9 +5,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-// import arrowOutward from "../../../../public/ServicesInner/arrow_outward.svg";
-import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 

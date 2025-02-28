@@ -7,7 +7,6 @@ import Link from "next/link";
 const ServiceInnerContent = ({ services, serviceHeading }) => {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [prevScrollY, setPrevScrollY] = useState(0);
-  const [serviceStyles, setServiceStyles] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

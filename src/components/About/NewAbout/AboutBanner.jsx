@@ -241,7 +241,7 @@ const AboutBanner = ({ bannerData, bannerPopupVideo }) => {
 
           <div
             ref={buttonRef}
-            className="absolute inset-0 flex items-center justify-center z-50 "
+            className="absolute inset-0 flex items-center justify-center z-50 mb-6"
             onClick={handleVideoClick}
           >
             <div className=" flex items-center justify-center  h-fit w-24 sm:w-28 z-20-- xl:w-32  cursor-pointer absolute">
@@ -298,14 +298,14 @@ const AboutBanner = ({ bannerData, bannerPopupVideo }) => {
           <div
             ref={aboutSectionCards}
             id="aboutSectionCards"
-            className="h-fit-- bg-transparent overflow-y-visible md:bg-[#F6F6F4] items-center-- justify-center-- flex flex-col md:flex-row space-x-0 md:space-y-0 space-y-4 md:space-x-3 lg:px-10-- xl:px-20-- pb-5-- w-full px-5 sm:px-10 md:px-12 "
+            className="h-fit-- bg-transparent overflow-y-visible md:bg-[#F6F6F4] items-center md:items-start justify-center-- flex flex-col md:flex-row space-x-0 md:space-y-0 space-y-4 md:space-x-3 lg:px-10-- xl:px-20-- pb-5-- w-full px-5 sm:px-10 md:px-12 "
           >
-            <div className="about-card rounded-xl bg-[#F1F1F1] flex lg:flex-row flex-col  h-[180px] md:h-[280px] lg:h-[240px] text-[#101763] space-x-3 items-center justify-center px-6 sm:px-12 w-full sm:w-[80%] md:w-1/3 ">
-              <h4 className="text-2xl sm:text-4xl md:text-3xl lg:text-5xl text-center font-sora tracking-tight  font-semibold">
+            <div className="about-card rounded-xl bg-[#F1F1F1] flex lg:flex-row flex-col  h-[180px] md:h-[280px] lg:h-[270px] text-[#101763] space-x-3 items-center justify-center px-6  xl:px-7 w-full sm:w-[80%] md:w-1/3 ">
+              <h4 className="text-2xl sm:text-4xl md:text-3xl xl:text-5xl text-center font-sora tracking-tight  font-semibold">
                 {bannerData?.[0]?.total_count || 600}+
               </h4>
               <div className="flex flex-col space-y-2 sm:space-y-3 font-satoshi text-center lg:text-left">
-                <h4 className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl ">
+                <h4 className="font-semibold text-xl sm:text-2xl md:text-3xl xl:text-4xl ">
                   {bannerData?.[0]?.title || "Happy Clients"}
                 </h4>
                 <p className="font-normal  text-xs sm:text-sm   lg:text-base w-full text-center lg:text-left">
@@ -315,12 +315,12 @@ const AboutBanner = ({ bannerData, bannerPopupVideo }) => {
               </div>
             </div>
 
-            <div className="about-card rounded-xl bg-[#D81100] flex lg:flex-row flex-col h-[180px] md:h-[280px] lg:h-[240px] text-white space-x-3 items-center justify-center px-6 sm:px-12 w-full sm:w-[80%] md:w-1/3">
-              <h4 className="text-2xl sm:text-4xl md:text-3xl lg:text-5xl text-center font-sora tracking-tight  font-semibold">
+            <div className="about-card rounded-xl bg-[#D81100] flex lg:flex-row flex-col h-[180px] md:h-[280px] lg:h-[270px] text-white space-x-3 items-center justify-center px-6  xl:px-7 w-full sm:w-[80%] md:w-1/3">
+              <h4 className="text-2xl sm:text-4xl md:text-3xl xl:text-5xl text-center font-sora tracking-tight  font-semibold">
                 {bannerData?.[1]?.total_count || 30}+
               </h4>
               <div className="flex flex-col space-y-2 sm:space-y-3 font-satoshi text-center lg:text-left">
-                <h4 className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl ">
+                <h4 className="font-semibold text-xl sm:text-2xl md:text-3xl xl:text-4xl ">
                   {" "}
                   {bannerData?.[1]?.title || "Experienced Team"}
                 </h4>
@@ -331,13 +331,13 @@ const AboutBanner = ({ bannerData, bannerPopupVideo }) => {
               </div>
             </div>
 
-            <div className="about-card rounded-xl bg-[#101763] flex lg:flex-row flex-col  h-[180px] md:h-[280px] lg:h-[240px] text-white items-center justify-center px-6 sm:px-12 w-full sm:w-[80%] md:w-1/3 space-x-2">
+            <div className="about-card rounded-xl bg-[#101763] flex lg:flex-row flex-col  h-[180px] md:h-[280px] lg:h-[270px] text-white items-center justify-center px-6  xl:px-7 w-full sm:w-[80%] md:w-1/3 space-x-2">
               <div className="flex lg:flex-row flex-col items-center  font-satoshi space-x-3">
-                <h4 className="text-2xl sm:text-4xl md:text-3xl lg:text-5xl text-center font-sora tracking-tight  font-semibold">
+                <h4 className="text-2xl sm:text-4xl md:text-3xl xl:text-5xl text-center font-sora tracking-tight  font-semibold">
                   {bannerData?.[2]?.total_count || 800}+
                 </h4>
                 <div className="flex flex-col space-y-2 sm:space-y-3 font-satoshi text-center lg:text-left">
-                  <h4 className=" font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl ">
+                  <h4 className=" font-semibold text-xl sm:text-2xl md:text-3xl xl:text-4xl ">
                     {bannerData?.[2]?.title || "Projects"}
                   </h4>
                   <p className="font-normal text-xs sm:text-sm   lg:text-base w-full">

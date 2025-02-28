@@ -26,7 +26,7 @@ const DarkButton = ({
   return (
     <Link
       href={link}
-      className={`animated-button  flex items-center font-satoshi justify-center border border-black text-base md:text-lg font-medium ${color ? "text-[#101763]" : "text-black"} rounded-[4px]     mt-5  w-[180px] lg:w-[201px] h-[50px] md:h-[61px] transition-all duration-300 overflow-hidden ${transform ? "capitalize" : ""} relative ${bgWhite ? "bg-white" : ""}`}
+      className={`animated-button  flex items-center font-satoshi justify-center border border-black text-sm md:text-lg font-medium ${color ? "text-[#101763]" : "text-black"} rounded-[4px]     mt-5  w-[165px] lg:w-[201px] h-[45px] md:h-[61px] transition-all duration-300 overflow-hidden ${transform ? "capitalize" : ""} relative ${bgWhite ? "bg-white" : ""}`}
     >
       <span className="absolute w-full h-full flex items-center justify-center">
         {text}

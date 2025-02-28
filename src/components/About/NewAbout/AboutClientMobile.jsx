@@ -64,7 +64,10 @@ function AboutClientMobile({ data }) {
             <div className="overflow-hidden md:pt-12 w-full">
               <div id="clientAnimation" className="flex ml-[-1rem] mr-[-1rem]">
                 {duplicatedData?.map((item, index) => (
-                  <div className="w-[8rem] sm:w-[12rem] ml-[1rem] sm:ml-[2rem] mr-[1rem] sm:mr-[1.5rem] flex-none h-28 max-w-full relative  self-center object-center object-contain">
+                  <div
+                    key={index}
+                    className="w-[8rem] sm:w-[12rem] ml-[1rem] sm:ml-[2rem] mr-[1rem] sm:mr-[1.5rem] flex-none h-28 max-w-full relative  self-center object-center object-contain"
+                  >
                     <Image
                       src={item.image}
                       fill={true}

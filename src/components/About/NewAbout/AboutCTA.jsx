@@ -1,5 +1,4 @@
 import DarkButton from "@/components/Buttons/DarkButton";
-import Link from "next/link";
 import React from "react";
 
 const AboutCTA = ({ ctaHeading, description, VideoUrl }) => {

@@ -9,7 +9,7 @@ function WorkInnerSection1({ data }) {
   const isVideo = (url) => url?.endsWith(".mp4");
   return (
     <div className="relative w-screen h-fit bg-[#ececec]-- overflow-x-hidden">
-      <div className="w-full space-y-7 md:space-y-10 flex items-center pt-24 md:pt-[7rem] sm:pt-28 pb-6 md:pb-10 xl:pb-16  h-fit flex-col px-5 sm:px-10 md:px-12">
+      <div className="w-full space-y-7 md:space-y-10 flex-- items-center-- pt-24 md:pt-[7rem] sm:pt-28 pb-6 md:pb-10 xl:pb-16  h-fit flex-col-- px-5 sm:px-10 md:px-12">
         {data?.banner_image && isVideo(data?.banner_image) ? (
           <video
             autoPlay

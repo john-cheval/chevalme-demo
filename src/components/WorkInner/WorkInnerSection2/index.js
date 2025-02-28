@@ -9,7 +9,6 @@ import "swiper/css/navigation";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 function WorkInnerSection2({ data, ID, link }) {
-  console.log(data, "thisissisi");
   const router = useRouter();
   return (
     <div className="relative w-screen h-fit md:pb-14  bg-[#F6F6F4] overflow-x-hidden">
