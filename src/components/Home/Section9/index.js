@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -82,67 +82,53 @@ function Section9({ data, title }) {
               centeredSlides={false}
               spaceBetween={18}
               loop={true}
-              modules={[Navigation]}
+              modules={[Navigation, Autoplay]}
               onBeforeInit={(swiper) => {
                 swiperRef.current = swiper;
               }}
               grabCursor={true}
               className="w-full h-fit"
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
             >
               {data?.map((data, index) => (
-                <SwiperSlide
-                  key={index}
-                  className=" swiper-slide-fit cursor-pointer "
-                  onClick={() => router.push(`/blogs/${data.slug}`)}
-                >
-                  <div
-                    // style={{
-                    //   width:
-                    //     index % 2 !== 0
-                    //       ? "calc(40vw - 30px - 12px)"
-                    //       : "calc(30vw - 30px - 12px)",
-                    // }}
-                    // className={
-                    //   index % 2 !== 0
-                    //     ? "homePageBlogWidth2 flex flex-col  sm:items-start items-center sm:justify-start justify-center   h-fit space-y-4"
-                    //     : "homePageBlogWidth1 flex flex-col  sm:items-start items-center sm:justify-start justify-center   h-fit space-y-4"
-                    // }
-                    className="flex flex-col  sm:items-start group items-center sm:justify-start justify-center  overflow-hidden   h-fit space-y-4"
+                <>
+                  <SwiperSlide
+                    key={index}
+                    className=" swiper-slide-fit cursor-pointer "
+                    onClick={() => router.push(`/blogs/${data.slug}`)}
                   >
-                    <div
-                      // className={
-                      //   index % 2 !== 0
-                      //     ? ` h-72 lg:h-80 w-full object-cover relative object-center `
-                      //     : ` h-72 w-full object-cover relative object-center `
-                      // }
-                      className="h-72 w-full object-cover relative object-center"
-                    >
-                      <Image
-                        src={data._embedded["wp:featuredmedia"][0].source_url}
-                        fill={true}
-                        className=" object-cover object-center rounded-lg "
-                        alt={data?.type}
-                      />
-                    </div>
-                    <button className="font-sora text-[10px] uppercase py-2.5 px-6 w-fit border border-[#D81100] text-[#D81100] rounded-3xl">
-                      {data.type}
-                    </button>
-                    <p className="font-sora text-2xl sm:text-left line-clamp-2 text-center text-[#101763] group-hover:text-[#D81100] transition-all duration-300 leading-relaxed min-h-[80px]">
-                      {data.title.rendered}
-                    </p>
-                    <div>
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: truncateHTML(data.content.rendered),
-                        }}
-                        className="font-satoshi paragraphText-Size transition-all duration-300 text-[#BFBFBF] group-hover:text-[#101763] line-clamp-3 sm:text-left text-center "
-                      ></p>
-                      <p className="text-xs my-3 text-center md:text-left group-hover:text-[#D81100] underline underline-offset-8 transition-all duration-300 text-[#BFBFBF]">
-                        Read more
+                    <div className="flex flex-col  sm:items-start group items-center sm:justify-start justify-center  overflow-hidden   h-fit space-y-4">
+                      <div className="h-72 w-full object-cover relative object-center">
+                        <Image
+                          src={data._embedded["wp:featuredmedia"][0].source_url}
+                          fill={true}
+                          className=" object-cover object-center rounded-lg "
+                          alt={data?.type}
+                        />
+                      </div>
+                      <button className="font-sora text-[10px] uppercase py-2.5 px-6 w-fit border border-[#D81100] text-[#D81100] rounded-3xl">
+                        {data.type}
+                      </button>
+                      <p className="font-sora text-2xl sm:text-left line-clamp-2 text-center text-[#101763] group-hover:text-[#D81100] transition-all duration-300 leading-relaxed min-h-[80px]">
+                        {data.title.rendered}
                       </p>
+                      <div>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: truncateHTML(data.content.rendered),
+                          }}
+                          className="font-satoshi paragraphText-Size transition-all duration-300 text-[#BFBFBF] group-hover:text-[#101763] line-clamp-3 sm:text-left text-center "
+                        ></p>
+                        <p className="text-xs my-3 text-center md:text-left group-hover:text-[#D81100] underline underline-offset-8 transition-all duration-300 text-[#BFBFBF]">
+                          Read more
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </SwiperSlide>
+                  </SwiperSlide>
+                </>
               ))}{" "}
             </Swiper>
           </ChildrenReveal>

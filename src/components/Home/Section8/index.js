@@ -7,6 +7,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import ChildrenReveal from "@/util/ChildrenReveal";
 function Section8({ data, split }) {
+  console.log(data?.show_off_gallery, "thisiss");
   const firstSlider = useRef(null);
   const secondSlider = useRef(null);
   const slider1 = useRef(null);
@@ -112,26 +113,6 @@ function Section8({ data, split }) {
                     </div>
                   )
               )}
-            {/* <Image
-              src={demo}
-              className=" h-[180px] sm:h-[250px] md:h-[304px] object-contain"
-            />
-            <Image
-              src={demo}
-              className=" h-[180px] sm:h-[250px] md:h-[304px] object-contain"
-            />
-            <Image
-              src={demo}
-              className=" h-[180px] sm:h-[250px] md:h-[304px] object-contain"
-            />
-            <Image
-              src={demo}
-              className=" h-[180px] sm:h-[250px] md:h-[304px] object-contain"
-            />
-            <Image
-              src={demo}
-              className=" h-[180px] sm:h-[250px] md:h-[304px] object-contain"
-            /> */}
           </div>
         </div>
         <div ref={slider2} className="relative whitespace-nowrap">

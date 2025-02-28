@@ -1,87 +1,42 @@
 /** @format */
 "use client";
-// import Footer from "@/components/Footer";
 import NewFooter from "@/components/Footer/NewFooter";
+import Section9 from "@/components/Home/Section9";
+import LocationFaq from "@/components/Location/Common/Faq";
+import GoogleReviews from "@/components/Location/Common/GoogleReviews";
+import LocationBottomBanner from "@/components/Location/Common/LocationBottomBanner";
+import LocationContact from "@/components/Location/Common/LocationContact";
+import LocationServices from "@/components/Location/Common/Services";
 import Section1 from "@/components/Location/Riyadh/Section1";
-import Section2 from "@/components/Location/Riyadh/Section2";
-import Section3 from "@/components/Location/Riyadh/Section3";
-import Section4 from "@/components/Location/Riyadh/Section4";
-import Section5 from "@/components/Location/Riyadh/Section5";
-import Section6 from "@/components/Location/Riyadh/Section6";
-import Section7 from "@/components/Location/Riyadh/Section7";
 import NewHeader from "@/components/NewHeader/NewHeader";
+import { faqRiyadh } from "@/data/Location/FaqData";
+import { servicesRiyadh } from "@/data/Location/servicesData";
+import useFetch from "@/hooks/useFetch";
 import LoadingAnimation from "@/util/LoadingAnimation";
 import React, { useEffect, useState } from "react";
 
 function RiyadhPage() {
-  const [footer, setFooter] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [reviewsLoading, setReviewsLoading] = useState(true);
-  const [googleReviews, setGoogleReviews] = useState(null);
-  const [googleReviewsSorted, setGoogleReviewsSorted] = useState(null);
-  const [footerLoading, setFooterLoading] = useState(true);
-  const [blogsHomePage, setBlogsHomePage] = useState(null);
-  const [blogsLoading, setBlogsLoading] = useState(true);
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await fetch(
-          "https://d331b20430.nxcli.net/chevalapi/wp-json/wp/v2/posts?_embed"
-        ); // Replace with your API endpoint
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        setBlogsHomePage(result);
-        setBlogsLoading(false);
-      } catch (error) {
-        console.log("error");
-      }
-    };
 
-    const fetchGoogleReviews = async () => {
-      try {
-        const response = await fetch(
-          "https://d331b20430.nxcli.net/chevalapi/wp-json/custom/v1/google_reviews"
-        ); // Replace with your API endpoint
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        setGoogleReviews(result);
-        setGoogleReviewsSorted(result.all_reviews);
-        setReviewsLoading(false);
-      } catch (error) {
-        console.log("error");
-      }
-    };
-    const fetchFooter = async () => {
-      try {
-        const response = await fetch(
-          "https://d331b20430.nxcli.net/chevalapi/wp-json/custom/v1/services"
-        ); // Replace with your API endpoint
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        setFooter(result);
-        setFooterLoading(false);
-      } catch (error) {
-        console.log("error");
-      }
-    };
-    fetchFooter();
-    fetchGoogleReviews();
-    fetchBlogs();
-  }, []);
+  const { data: blogsHomePage, loading: blogsLoading } = useFetch(
+    "https://d331b20430.nxcli.net/chevalapi/wp-json/wp/v2/posts?_embed"
+  );
+
+  const {
+    data: googleReviews,
+    loading: reviewsLoading,
+    googleReviewsSorted,
+  } = useFetch(
+    "https://d331b20430.nxcli.net/chevalapi/wp-json/custom/v1/google_reviews"
+  );
 
   useEffect(() => {
-    if (!footerLoading && !reviewsLoading && !blogsLoading) {
+    if (!reviewsLoading && !blogsLoading) {
       setLoading(false);
     } else {
       setLoading(true);
     }
-  }, [footerLoading, blogsLoading, reviewsLoading]);
+  }, [blogsLoading, reviewsLoading]);
 
   return loading ? (
     <>
@@ -89,17 +44,25 @@ function RiyadhPage() {
     </>
   ) : (
     <>
-      {/* <Header /> */}
       <NewHeader />
       <Section1 />
-      <Section2 />
-      <Section3 data={googleReviews} sortedData={googleReviewsSorted} />
-      <Section4 />
-      <Section5 data={blogsHomePage} />
-      <Section6 />
-      <Section7 />
+      <LocationContact />
+      <GoogleReviews data={googleReviews} sortedData={googleReviewsSorted} />
+      <LocationServices service={servicesRiyadh} />
+      <Section9 data={blogsHomePage} title={"Insights and Ideas"} />
+      <LocationFaq data={faqRiyadh} />
+      <LocationBottomBanner
+        title="Transforming your online presence with innovative web design. Are
+              you tired of having a dull and outdated website?"
+        description="Embrace a remarkable transformation for your online presence by
+              leveraging our cutting-edge web design services. Our skilled
+              professionals will craft a visually captivating and user-friendly
+              website that enthralls your audience and boosts traffic to your
+              business.Distinguish yourself from the competition and leave a
+              memorable impact with our innovative designs. Elevate your online
+              presence now!"
+      />
       <NewFooter />
-      {/* <Footer data={footer} /> */}
     </>
   );
 }

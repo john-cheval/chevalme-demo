@@ -33,31 +33,33 @@ const ServiceListNew = () => {
       const trigger = ScrollTrigger.create({
         trigger: section,
         // start: `top center${offsets[index]}` || "top center",
-        start: "top center",
+        // start: "top center",
+        start: `top+=150px center`,
         endTrigger: ".serviceContainer",
         end: "bottom center",
         pin: heading,
         pinSpacing: false,
         // markers: true,
+        scrub: 1.6,
 
         onEnter: () => {
           gsap.to(heading, {
             y: offsets[index],
-            duration: 0.6,
+            duration: 1.6,
             ease: "power2.out",
           });
         },
         onLeaveBack: () => {
           gsap.to(heading, {
-            y: offsets[index - 1] || 0,
-            duration: 0.6,
+            y: offsets[index + 1] || 0,
+            duration: 1.6,
             ease: "power2.out",
           });
         },
         onEnterBack: () => {
           gsap.to(heading, {
             y: offsets[index],
-            duration: 0.6,
+            duration: 1.6,
             ease: "power2.out",
           });
         },
@@ -66,6 +68,7 @@ const ServiceListNew = () => {
           if (self.progress === 1) {
             gsap.to(heading, {
               y: offsets[index],
+              duration: 0.6,
             });
           }
         },
@@ -85,7 +88,7 @@ const ServiceListNew = () => {
     if (router.get("section")) {
       const sectionIndex = ["Craft", "Code", "Convert"].indexOf(
         router.get("section").charAt(0).toUpperCase() +
-          router.get("section").slice(1)
+        router.get("section").slice(1)
       );
 
       if (sectionIndex !== -1 && sectionsRef.current[sectionIndex]) {

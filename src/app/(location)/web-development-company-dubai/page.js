@@ -1,23 +1,12 @@
 import DubaiPage from "@/pages/Location/Dubai";
+import generateMetadataData from "@/util/generateMetaTitle";
 
-export async function generateMetadata({ params }) {
-  // const id = (await params).id[0];
-
-  // const data = await fetch(
-  //   `https://d331b20430.nxcli.net/chevalapi/wp-json/custom/v1/full_details?ID=${id}`
-  // ).then((res) => res.json());
-
-  return {
-    title:
-      // data?.meta_title ||
-      "Best Web Development Company in Dubai | Cheval",
-    description:
-      // data?.meta_description ||
-      "Cheval, a leading Web Development Company in Dubai, offers custom web solutions tailored to your needs. Partner with us for innovative & effective digital experiences.",
-    alternates: {
-      canonical: `https://chevalme.com/web-development-company-dubai/`,
-    },
-  };
+export async function generateMetadata() {
+  return await generateMetadataData(
+    "web-development-company-dubai",
+    "web-development-company-dubai",
+    true
+  );
 }
 function Dubai() {
   return <DubaiPage />;

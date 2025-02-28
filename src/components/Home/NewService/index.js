@@ -54,9 +54,6 @@ const NewService = ({ data, title }) => {
                         text={data[key]?.home_page_short_description}
                         styling="font-satoshi  sm:text-left   w-[90%] text-base md:group-hover:scale-105 md:group-hover:translate-x-3   xl:w-full  transition-all duration-300  "
                       />
-                      {/* <p className="font-satoshi  sm:text-left   w-[90%] text-base md:group-hover:scale-105 md:group-hover:translate-x-3   xl:w-full  transition-all duration-300 group-hover:break-words-- ">
-                        {data[key]?.home_page_short_description}
-                      </p> */}
                     </div>
                   </div>
 

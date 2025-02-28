@@ -4,8 +4,10 @@ import React, { useRef, useState } from "react";
 import arrowDown from "../../../../public/Contact/arrow_down.png";
 import arrowForward from "../../../../public/Contact/arrow-white.png";
 import axios from "axios";
+import { usePathname, useRouter } from "next/navigation";
 
-const ContactForm = ({ services }) => {
+const ContactForm = ({ services, title }) => {
+  const router = usePathname();
   const formRef = useRef(null);
   const [formData, setFormData] = useState({
     textName: "",
@@ -61,12 +63,12 @@ const ContactForm = ({ services }) => {
     <div
       ref={formRef}
       id="contact"
-      className="px-5 sm:px-10 md:px-12 pt-8 md:pt-12  pb-24 bg-white "
+      className={`px-5 sm:px-10 md:px-12 pt-8 md:pt-12--  pb-24-- ${router.includes("service") ? "md:pt-24 pb-28" : "md:pt-12 pb-24"} bg-white `}
     >
       <div className="lg:space-y-[57px] md:space-y-10 space-y-6 flex flex-col sm:justify-center sm:items-center">
         <div className="space-y-2 flex items-center justify-center flex-col">
           <h2 className="text-[#101763] text-center font-sora md:text-4xl lg:text-[40px] text-[26px] sm:text-3xl font-semibold leading-[155%] tracking-[-0.4px]">
-            Start a conversation.
+            {title}
           </h2>
           <p className="text-[#101763] text-center font-satoshi text-base lg:text-xl font-normal leading-[154%] lg:w-[744px] w-[80%]">
             {" "}
@@ -90,6 +92,7 @@ const ContactForm = ({ services }) => {
                 value={formData.textName}
                 onChange={handleChange}
                 required
+                maxLength={50}
                 className="   w-full sm:max-w-[350px] md:w-[450px] xl:w-[575px] h-[73px] border border-[#d9d9d9] rounded-lg block pl-7 py-6 bg-white outline-none focus:ring-0 text-[#101763] font-satoshi text-base placeholder-font-satoshi placeholder-[#101763] font-normal leading-[154%]"
                 placeholder="Enter Name"
               />
@@ -108,6 +111,7 @@ const ContactForm = ({ services }) => {
                 name="textPhone"
                 value={formData.textPhone}
                 onChange={handleChange}
+                maxLength={15}
                 required
                 className=" w-full sm:max-w-[350px] md:w-[450px] xl:w-[575px] h-[73px] border border-[#d9d9d9] rounded-lg block pl-7 py-6 bg-white outline-none focus:ring-0 text-[#101763] font-satoshi text-base placeholder-font-satoshi placeholder-[#101763] font-normal leading-[154%] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                 placeholder="Enter Phone"
@@ -129,6 +133,7 @@ const ContactForm = ({ services }) => {
                 name="emailAddress"
                 value={formData.emailAddress}
                 onChange={handleChange}
+                maxLength={50}
                 required
                 className=" w-full sm:max-w-[350px] md:w-[450px] xl:w-[575px] h-[73px] border border-[#d9d9d9] rounded-lg block pl-7 py-6 bg-white outline-none focus:ring-0 text-[#101763] font-satoshi text-base placeholder-font-satoshi placeholder-[#101763] font-normal leading-[154%]"
                 placeholder="Enter Email"
@@ -187,6 +192,7 @@ const ContactForm = ({ services }) => {
               name="textareaMsg"
               value={formData.textareaMsg}
               onChange={handleChange}
+              maxLength={200}
               className="w-full h-[116px] border border-[#d9d9d9] rounded-lg block pl-7 py-6 bg-white outline-none focus:ring-0 text-[#101763] font-satoshi text-base placeholder-font-satoshi placeholder-[#101763] font-normal leading-[154%] resize-none"
               placeholder="Enter Message"
             ></textarea>

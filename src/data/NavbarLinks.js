@@ -118,19 +118,19 @@ const eCommerce = [
 const websites = [
   {
     title: "Website Design",
-    link: "/service/website",
+    link: "/service/website-development",
   },
   {
     title: "Strategy and Consulting",
-    link: "/service/website",
+    link: "/service/website-development",
   },
   {
     title: "Content Translation",
-    link: "/service/website",
+    link: "/service/website-development",
   },
   {
     title: "Content Creation",
-    link: "/service/website",
+    link: "/service/website-development",
   },
 ];
 

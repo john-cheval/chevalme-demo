@@ -1,9 +1,10 @@
 "use client";
+import React, { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import React, { useEffect, useRef, useState } from "react";
+
 import logo from "../../../public/logo.svg";
 import { ArrowRight } from "lucide-react";
 import menu from "../../../public/menu1.svg";
@@ -85,25 +86,27 @@ const NewHeader = () => {
     menuGGRef.current = gsap.timeline({ paused: true });
 
     gsap.set(
-      "#mblMenuHeader img, #mblMenuHeader p, #mblMenuFooter button, #mblMenuFooter p, #mblMenuFooter div, #mblMenuItems p",
-      { y: 0, opacity: 1 }
+      "#mblMenuHeader img, #mblMenuHeader p, #mblMenuFooter #button, #mblMenuFooter p, #mblMenuFooter div, #mblMenuItems p",
+      { y: 20, opacity: 0 }
     );
 
     menuGGRef.current
-      .to("#mblMenu", {
-        zIndex: 10077774444,
-      })
+      .set("#mblMenu", { zIndex: 10077774444, visibility: "visible" })
       .to("#mblMenu", {
         opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
       })
       .to(
-        "#mblMenuHeader img, #mblMenuHeader p, #mblMenuItems p, #mblMenuFooter button, #mblMenuFooter p, #mblMenuFooter div",
+        "#mblMenuHeader img, #mblMenuHeader p, #mblMenuItems p, #mblMenuFooter #button, #mblMenuFooter p, #mblMenuFooter div",
         {
           y: 0,
           opacity: 1,
-          stagger: { amount: 0.2 },
+          stagger: 0.05,
+          duration: 0.4,
+          ease: "power2.out",
         },
-        "-=30%"
+        "-=0.2"
       );
   }, []);
 
@@ -113,7 +116,11 @@ const NewHeader = () => {
   function menuClose() {
     setOpenDropdown(null);
     setOpenSubmenu(null);
-    menuGGRef.current.reverse();
+    menuGGRef.current.reverse().eventCallback("onReverseComplete", () => {
+      gsap.set("#mblMenu", { visibility: "hidden" });
+    });
+
+    console.log("menu close clicked");
   }
 
   useEffect(() => {
@@ -201,7 +208,7 @@ const NewHeader = () => {
       <header
         ref={headerRef}
         id="header"
-        className={`fixed top-0 z-[999955555] font-satoshi w-full transition-transform duration-500  ${
+        className={`fixed top-0 z-[999955555] font-satoshi w-full transition-transform duration-300  ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         } `}
       >
@@ -355,7 +362,11 @@ const NewHeader = () => {
         </div>
       </header>
       <div className="fixed bottom-4 right-3 xl:bottom-24 xl:right-6 z-[10000000]">
-        <Link href="https://web.whatsapp.com/send?phone=%2B971503560927&text=Hello!+I+am+interested+in+your+service">
+        <Link
+          // href="https://web.whatsapp.com/send?phone=%2B971503560927&text=Hello!+I+am+interested+in+your+service"
+          href="https://wa.me/971503560927?text=Hello!+I+am+interested+in+your+service"
+          target="_blank"
+        >
           <div className="whapp animated pulse">
             <div className="whapp-btn">
               <Image
@@ -399,7 +410,7 @@ const NewHeader = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col  h-[100dvh] w-screen items-center  pt-32 space-y-20 ">
+        <div className="flex flex-col  h-[100dvh] w-screen items-center  pt-24 sm:pt-32 space-y-16 ">
           <div
             id="mblMenuItems"
             className="flex flex-col font-sora font-semibold text-3xl text-[#101763] items-center justify-center w-screen h-fit space-y-4 px-5 sm:px-10 md:px-12"
@@ -409,7 +420,11 @@ const NewHeader = () => {
                 <div key={name}>
                   <div className="flex justify-center w-full text-center pt-4 items-center cursor-pointer transition-colors duration-300 uppercase">
                     <p>
-                      <Link href={path} className="text-[30px] uppercase">
+                      <Link
+                        href={path}
+                        className="text-[30px] uppercase"
+                        onClick={menuClose}
+                      >
                         {name}
                       </Link>
                     </p>
@@ -419,12 +434,13 @@ const NewHeader = () => {
                     additionalLinks?.map((item) => (
                       <div
                         key={item}
-                        className="flex justify-center w-full text-center pt-2 items-center cursor-pointer transition-colors duration-300 uppercase"
+                        className="flex justify-center w-full text-center pt-3 items-center cursor-pointer transition-colors duration-300 uppercase"
                       >
                         <p>
                           <Link
+                            onClick={menuClose}
                             href={`/services?section=${item?.toLowerCase()}`}
-                            className="text-[25px]"
+                            className="text-xl sm:text-[22px]"
                           >
                             {item}
                           </Link>
@@ -438,9 +454,10 @@ const NewHeader = () => {
 
           <div
             id="mblMenuFooter"
-            className="flex flex-col items-center justify-center  space-y-10"
+            className="flex flex-col items-center justify-center  space-y-6"
           >
             <Link
+              id="button"
               href={"/contact-us"}
               className="bg-[#D81100] w-[150px] md:w-[158px] font-satoshi h-14 md:h-14 rounded-[10px]  text-white text-sm md:text-base font-medium leading-[154%] flex items-center gap-x-5 justify-center"
             >

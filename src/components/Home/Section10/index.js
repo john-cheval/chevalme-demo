@@ -77,25 +77,14 @@ function Section10({ data }) {
           </div>
           <ChildrenReveal x={20} y={0} styling="relative  w-full">
             <div className="overflow-hidden md:pt-12 w-full">
-              <div
-                // style={{
-                // animation: "ticker-kf-clients 10s linear infinite",
-                // }}
-                id="clientAnimation"
-                className="flex ml-[-1rem] mr-[-1rem]"
-              >
+              <div id="clientAnimation" className="flex ml-[-1rem] mr-[-1rem]">
                 {duplicatedData?.map((item, index) => (
                   <div
-                    // style={{
-                    //   margin: "0 2rem 0 2rem",
-                    // }}
                     key={index}
                     className="w-[10rem] sm:w-[13rem] ml-[0.4rem] sm:ml-[2rem] mr-[0.4rem] sm:mr-[1.5rem] flex-none h-28-- max-w-full relative  self-center object-center object-contain"
                   >
                     <Image
                       src={item.image}
-                      // fill={true}
-                      // objectFit="contain"
                       className="object-contain h-auto w-full"
                       alt={`image-${index + 1}`}
                       width={0}

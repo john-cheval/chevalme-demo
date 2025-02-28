@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
 import useMediaQuery from "@/util/useMediaQuery";
 import Link from "next/link";
-import { Play, RotateCcw, X } from "lucide-react";
+import { RotateCcw, X } from "lucide-react";
 import Plays from "../../../../public/About/play.svg";
 import Logo from "../../../../public/About/logo.svg";
 import Image from "next/image";
@@ -107,19 +107,19 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
         duration: 0.1,
         ease: "none",
       })
-      // .to(
-      //   "#maskImage",
-      //   {
-      //     maskSize: window.matchMedia("(max-width: 640px)").matches
-      //       ? "5000%"
-      //       : "4000%",
-      //     maskPositionX: window.matchMedia("(max-width: 640px)").matches
-      //       ? "57.5%"
-      //       : "55%",
-      //     ease: "none",
-      //   },
-      //   "<"
-      // )
+      .to(
+        "#maskImage",
+        {
+          maskSize: window.matchMedia("(max-width: 640px)").matches
+            ? "5000%"
+            : "4000%",
+          maskPositionX: window.matchMedia("(max-width: 640px)").matches
+            ? "57.5%"
+            : "55%",
+          ease: "none",
+        },
+        "<"
+      )
       .to("#section-text", {
         opactity: 0,
         visibility: "hidden",
@@ -135,6 +135,11 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
 
   const handleFullscreen = () => {
     setIsFullscreen(true);
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.error("Error playing video:", error);
+      });
+    }
   };
 
   const handleExitFullscreen = () => {
@@ -186,17 +191,16 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
         className="relative w-screen h-[100dvh] overflow-hidden"
       >
         <div
-          // style={{
-          //   maskImage: "url(/Cheval.svg)",
-          //   // maskPosition: isMobile ? "50% 54%" : "50% 89%",
-          //   maskPosition: isMobile ? "50% 54%" : "50% 93%",
-          //   maskRepeat: "no-repeat",
-          //   maskSize: "78%",
-          // }}
-          // id="maskImage"
+          style={{
+            maskImage: "url(/Cheval.svg)",
+            maskPosition: isMobile ? "50% 54%" : "50% 93%",
+            maskRepeat: "no-repeat",
+            maskSize: "78%",
+          }}
+          id="maskImage"
           className="absolute top-0 heroSectionBigText  left-0 w-screen md:h-[100dvh] flex items-center justify-center z-50 "
         >
-          {/* <video
+          <video
             autoPlay
             muted
             playsInline
@@ -205,7 +209,7 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
             className="lg:w-screen w-fit    object-cover h-[100dvh]"
           >
             <source src={shortVideo} type="video/mp4" />
-          </video> */}
+          </video>
         </div>
 
         <div
@@ -246,7 +250,6 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
               className="w-full flex items-center pt-0 sm:pt-32 lg:pt-36  h-[100dvh] flex-col justify-center "
             >
               <div
-                // id="heroSectionText"
                 className="md:space-y-5-- flex flex-col items-center justify-center mb-10 md:mb-none"
                 style={{
                   zIndex: 9,
@@ -255,7 +258,6 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
                 <h3
                   className="font-sora  text-2xl  sm:text-3xl md:text-4xl font-bold leading-[190%]-- md:mb-3 lg:text-5xl xl:text-[54px] bg-gradient-to-r from-[#101763] to-[#D81100] bg-clip-text text-transparent relative"
                   style={{
-                    // lineHeight: "1.2",
                     display: "block !important",
                     justifyContent: "center",
                     textAlign: "center",
@@ -277,6 +279,17 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
                     {linkText}
                   </span>
                 </Link>
+                <div className="items-center flex justify-center w-full realtive">
+                  <Link
+                    className="font-sora sm:hidden font-normal leading-[190%]  md:text-[18px] text-white underline   heroSectionBtn absolute bottom-24  bg-[#d81100] text-center  rounded-lg w-[180px] lg:w-[220px] h-[50px] md:h-[58px]    "
+                    href={link}
+                    style={{ zIndex: 1111988 }}
+                  >
+                    <span className="absolute w-full h-full flex items-center justify-center">
+                      {linkText}
+                    </span>
+                  </Link>
+                </div>
               </div>
               <h1
                 id="mainHeading"
@@ -286,17 +299,6 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
               </h1>{" "}
             </div>
           </div>
-        </div>
-
-        <div className="items-center flex justify-center w-full">
-          <Link
-            className="font-sora sm:hidden font-normal leading-[190%]  md:text-[18px] text-white underline   heroSectionBtn absolute bottom-24  bg-[#d81100] text-center  rounded-lg w-[180px] lg:w-[220px] h-[50px] md:h-[58px]    "
-            href={link}
-          >
-            <span className="absolute w-full h-full flex items-center justify-center">
-              {linkText}
-            </span>
-          </Link>
         </div>
       </div>
 

@@ -81,7 +81,7 @@ const code = [
       "OPen Cart",
       "Big Commerce",
     ],
-    Link: "/service/e-commerce",
+    Link: "/service/ecommerce-solutions",
   },
   {
     title: "Website",
@@ -92,7 +92,7 @@ const code = [
       "Content Translation",
       "content Creation",
     ],
-    Link: "/service/website",
+    Link: "/service/website-development",
   },
 ];
 

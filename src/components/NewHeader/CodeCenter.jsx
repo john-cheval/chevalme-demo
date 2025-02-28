@@ -42,7 +42,7 @@ const CodeCenter = () => {
 
         <div className="space-y-2">
           <h2 className="font-sora font-base font-semibold leading-[190%]-- heading-gradient">
-            <Link href="/service/e-commerce">Ecommerce</Link>
+            <Link href="/service/ecommerce-solutions">Ecommerce</Link>
           </h2>
           <ul className="space-y-3">
             {eCommerce?.map((data, index) => (
@@ -58,7 +58,7 @@ const CodeCenter = () => {
 
         <div className="space-y-2">
           <h2 className="font-sora font-base font-semibold leading-[190%]-- heading-gradient">
-            <Link href="/service/website">Websites</Link>
+            <Link href="/service/website-development">Websites</Link>
           </h2>
           <ul className="space-y-3">
             {websites?.map((data, index) => (

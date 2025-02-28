@@ -189,14 +189,8 @@ function Section11({ data, sortedData }) {
                   sizes="100vw"
                   className="w-40 sm:w-48 md:w-52 object-contain"
                 />
-                {/* <span className="font-sans pb-3.5  font-normal  paragraphText-Size">
-                  Rating
-                </span> */}
               </div>
               <div className="flex space-x-3 items-end">
-                {/* <span className="font-sans font-bold text-base leading-none">
-                  {avgStars}
-                </span> */}
                 <div className="flex items-center justify-center space-x-2">
                   <Image
                     className="w-4 object-contain"
@@ -420,32 +414,6 @@ function Section11({ data, sortedData }) {
                 (data, index) =>
                   index === 1 && (
                     <>
-                      {/* {testi.video_url ? (
-                        <div className="flex  col-span-1 items-end  font-satoshi text-white h-[400px] relative   rounded-3xl">
-                          <video
-                            autoPlay
-                            muted
-                            playsInline
-                            loop
-                            id="video"
-                            controlsList="nodownload"
-                            className="w-full h-full absolute   rounded-3xl object-cover"
-                          >
-                            <source src={testi.video_url} type="video/mp4" />
-                          </video>
-                          <div className="flex z-10 flex-col py-10 px-12">
-                            <Image
-                              src={play}
-                              className="w-10 my-2 object-contain"
-                            />
-                            <p className="text-base">{testi.author_name}</p>
-                            <p className="text-base">
-                              {" "}
-                              {testi.author_position}
-                            </p>
-                          </div>
-                        </div>
-                      ) : ( */}
                       <div
                         key={index + 4}
                         className="flex relative col-span-1 mt-8 sm:-mt-44 lg:mt-14 overflow-y-visible justify-end flex-col  font-satoshi text-black h-fit sm:h-[400px] border border-black   rounded-3xl"
@@ -552,7 +520,6 @@ function Section11({ data, sortedData }) {
             </>
           )}
         </div>
-        {/* <div className="absolute  h-40 sm:h-60 bg-gradient-to-b from-transparent  to-90% to-white  bottom-0  w-full z-50" /> */}
       </div>
       <Link
         href={

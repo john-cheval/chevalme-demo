@@ -31,19 +31,6 @@ function Section4({ cardData }) {
             start: "top top",
             end: `+=${(totalCards - 1) * 100}%`,
             scrub: true,
-            // snap: {
-            //   snapTo: (progress) => {
-            //     const segment = 1 / (totalCards - 1);
-            //     const lower = Math.floor(progress / segment) * segment;
-            //     const upper = lower + segment;
-            //     const fraction = (progress - lower) / segment;
-
-            //     // Ensure we don't snap backward after reaching 80% of the next card
-            //     return fraction > 0.8 ? upper : lower;
-            //   },
-            //   duration: 0.3,
-            //   ease: "power2.inOut",
-            // },
           },
         })
         .to(imgSlider, {
@@ -64,13 +51,9 @@ function Section4({ cardData }) {
           y={20}
           styling="w-full relative flex mx-auto overflow-hidden h-fit sm:h-[100dvh]"
         >
-          {/* <div
-            id="slider-container"
-            className="relative sm:absolute flex overflow-hidden h-fit sm:h-[100dvh] sm:flex-row flex-col w-full sm:w-[300vw] min-w-full sm:space-y-0 space-y-4 my-10 sm:my-0 space-x-0 sm:space-x-10 items-start"
-          > */}
           <div
             id="slider-container"
-            className="relative sm:absolute flex overflow-hidden h-fit sm:h-[100dvh] sm:flex-row flex-col w-full sm:w-[300vw] min-w-full sm:space-y-0 space-y-4 my-10 sm:my-0  items-start"
+            className="relative sm:absolute flex overflow-hidden h-fit sm:h-[100dvh] sm:flex-row flex-col w-full sm:w-[300vw] min-w-full sm:space-y-0 space-y-4 my-5 sm:my-0  items-start"
           >
             {/* Card 1 */}
             <div className="w-screen px-5 sm:px-10 md:px-12">
@@ -90,18 +73,6 @@ function Section4({ cardData }) {
                   },
                 }}
               >
-                {/* <div className="hidden md:block absolute inset-0 h-full w-full z-10">
-                  <Image
-                    src={Overlay}
-                    alt="overlay"
-                    className="h-full w-full object-cover
-                  "
-                    height={0}
-                    width={0}
-                    sizes="100vw"
-                  />
-                </div> */}
-
                 <div className="absolute lg:hidden inset-0 h-full w-full z-10">
                   <Image
                     src={Overlay2}

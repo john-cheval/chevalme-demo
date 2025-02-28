@@ -2,11 +2,9 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { usePathname } from "next/navigation";
 
 const OurValuesInner = ({ valuesData }) => {
   const containerRef = useRef(null);
-  const pathname = usePathname();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -20,12 +18,13 @@ const OurValuesInner = ({ valuesData }) => {
       "about_mission_final",
     ];
 
-    if (pathname !== "/about") return;
     if (!container) return;
 
     ScrollTrigger.create({
-      trigger: container,
-      start: "top bottom",
+      trigger: containerRef.current,
+      start: "top top",
+      end: "bottom bottom",
+
       onEnter: () => {
         const sections = gsap.utils.toArray(".section");
         sections.forEach((section, index) => {
@@ -33,10 +32,9 @@ const OurValuesInner = ({ valuesData }) => {
             ease: "power3.out",
             scrollTrigger: {
               trigger: section,
-              start: "top center",
+              start: "top top",
               end: "bottom bottom",
-              scrub: true,
-              // markers: true,
+              pin: true,
               onEnter: () => {
                 const chkbg = document.querySelector(".chkbgabout");
                 if (chkbg) {
@@ -59,11 +57,17 @@ const OurValuesInner = ({ valuesData }) => {
   return (
     <div
       ref={containerRef}
-      className="h-[649px] w-full rounded-[30px] md:bg-cover md:bg-center md:bg-no-repeat bg-none z-20 relative chkbgabout "
+      className="h-[649px] w-full rounded-[30px] md:bg-cover md:bg-center md:bg-no-repeat bg-none z-40  chkbgabout"
+      style={{
+        height: "fit-content",
+        position: "relative",
+        width: "100%",
+        overflow: "hidden",
+      }}
     >
       <div className="flex flex-col justify-center h-full space-y-10 p-10">
         {valuesData?.speed_area_list?.map((values, index) => (
-          <div className={`section section${index + 1} relative`}>
+          <div className={`section section${index + 1} relative`} key={index}>
             <div className="flex items-center space-x-4">
               <span className=" w-4 h-4 round_about rounded-full"></span>
               <h2 className="text text-2xl font-bold  font-sora leading-[133%]">

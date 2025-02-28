@@ -9,14 +9,12 @@ import arrowForward from "../../../../public/arrow_forward.png";
 import { useRouter } from "next/navigation";
 import Buttons from "@/components/Buttons";
 import DarkButton from "@/components/Buttons/DarkButton";
-import useMediaQuery from "@/util/useMediaQuery";
 import WorkMobile from "./WorkMobile";
 function Section5({ data }) {
   const isVideo = (url) => url?.endsWith(".mp4");
   const router = useRouter();
   const [activeCard, setActiveCard] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
-  const isMobile = useMediaQuery("(max-width: 768px)");
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
