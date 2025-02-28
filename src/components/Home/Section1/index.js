@@ -193,10 +193,10 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
           //   maskRepeat: "no-repeat",
           //   maskSize: "78%",
           // }}
-          id="maskImage"
+          // id="maskImage"
           className="absolute top-0 heroSectionBigText  left-0 w-screen md:h-[100dvh] flex items-center justify-center z-50 "
         >
-          <video
+          {/* <video
             autoPlay
             muted
             playsInline
@@ -205,7 +205,7 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
             className="lg:w-screen w-fit    object-cover h-[100dvh]"
           >
             <source src={shortVideo} type="video/mp4" />
-          </video>
+          </video> */}
         </div>
 
         <div
