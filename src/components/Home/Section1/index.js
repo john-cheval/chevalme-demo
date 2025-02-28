@@ -190,7 +190,7 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
         id="section1"
         className="relative w-screen h-[100dvh] overflow-hidden"
       >
-        {/* <div
+        <div
           style={{
             maskImage: "url(/Cheval.svg)",
             maskPosition: isMobile ? "50% 54%" : "50% 93%",
@@ -210,7 +210,7 @@ function Section1({ title, link, fullVideo, shortVideo, subTitle, linkText }) {
           >
             <source src={shortVideo} type="video/mp4" />
           </video>
-        </div> */}
+        </div>
 
         <div
           id="playButton"

@@ -26,13 +26,13 @@ const BrandHeaderNew = ({ data }) => {
       {data?.sub_heading && (
         <div className="xl:col-span-8 lg:col-span-7 space-y-4 md:space-y-7 xl:space-y-10 col-span-12">
           <p
-            style={{
-              lineHeight: 1.2,
-            }}
+            // style={{
+            //   lineHeight: 1.2,
+            // }}
             dangerouslySetInnerHTML={{
               __html: data?.sub_heading,
             }}
-            className="font-satoshi text-lg md:text-[20px] text-center sm:text-start lg:text-[25px] text-[#101763] font-medium leading-[140%]  "
+            className="font-satoshi text-lg md:text-[20px] text-center  sm:text-start lg:text-[25px] text-[#101763] font-medium leading-[140%]  "
           ></p>
           <div className="flex sm:flex-row flex-col lg:justify-between flex-wrap  items-center gap-5 ">
             {data?.projects_category && (

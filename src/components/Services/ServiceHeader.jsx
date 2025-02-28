@@ -17,7 +17,7 @@ const ServiceHeader = ({ data }) => {
         </video>
         <div className="absolute inset-0 -z-[5] bg-service-header-gradient" />
 
-        <div className="flex items-center justify-center  w-full ">
+        <div className="flex items-center justify-center  w-full mt-14 sm:mt-0 ">
           <p
             className="lg:w-[662px] w-[80%] text-white text-center font-sora text-xl sm:text-2xl md:text-3xl lg:text-[40px] leading-[139%] tracking-[-0.4px]"
             style={{
