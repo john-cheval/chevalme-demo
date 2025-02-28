@@ -185,14 +185,14 @@ const NewFooter = () => {
                   </div>
                 </div>
               </div>
-              <iframe
+              {/* <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57787.433334419904!2d55.16559858442186!3d25.1453385510925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f699813fd9451%3A0xc4b554ceb43cff51!2sCheval%20ME!5e0!3m2!1sen!2sin!4v1695555265331!5m2!1sen!2sin"
                 title="Best Web Solution Agency in UAE"
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className=" max-w-[350px]-- xl:w-full-- w-full h-[210px]  rounded-[10px] mb-4 hidden md:block "
-              ></iframe>
+              ></iframe> */}
             </div>
           </div>
 
@@ -266,14 +266,14 @@ const NewFooter = () => {
               </Link>
             </div>
 
-            <iframe
+            {/* <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57787.433334419904!2d55.16559858442186!3d25.1453385510925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f699813fd9451%3A0xc4b554ceb43cff51!2sCheval%20ME!5e0!3m2!1sen!2sin!4v1695555265331!5m2!1sen!2sin"
               title="Best Web Solution Agency in UAE"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className=" w-full  h-[210px]  rounded-[10px] mx-auto mt-7 "
-            ></iframe>
+            ></iframe> */}
             <div className="flex flex-col sm:flex-row sm:justify-between items-center mt-6 md:hidden space-y-4 sm:space-y-0">
               <div className="flex flex-col xl:flex-row  xl:space-x-5 ">
                 <Link
