@@ -8,7 +8,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-function WorkInnerSection2({ data, ID }) {
+function WorkInnerSection2({ data, ID, link }) {
+  console.log(data, "thisissisi");
   const router = useRouter();
   return (
     <div className="relative w-screen h-fit md:pb-14  bg-[#F6F6F4] overflow-x-hidden">
@@ -23,7 +24,7 @@ function WorkInnerSection2({ data, ID }) {
               What next?
             </h3>
           </div>
-          <Link href={"/projects"}>
+          <Link href={link}>
             <p className="font-satoshi text-xs sm:text-sm md:text-base mb-1 underline underline-offset-8 text-black ">
               View All Works
             </p>
@@ -50,7 +51,7 @@ function WorkInnerSection2({ data, ID }) {
                   <SwiperSlide
                     key={data[key]?.ID}
                     onClick={() =>
-                      router.push(`/projects/${data[key]?.post_name}`)
+                      router.push(`${link}/${data[key]?.post_name}`)
                     }
                     className=" swiper-slide-fit group"
                   >

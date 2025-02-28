@@ -1,15 +1,34 @@
 /** @format */
 "use client";
 
-import ContactForm from "@/components/Contact/NewContact/ContactForm";
-import ContactMiddleSection from "@/components/Contact/NewContact/ContactMiddleSection";
-import ContactTopSection from "@/components/Contact/NewContact/ContactTopSection";
+const NewHeader = dynamic(() => import("@/components/NewHeader/NewHeader"), {
+  ssr: false,
+});
+const ContactForm = dynamic(
+  () => import("@/components/Contact/NewContact/ContactForm"),
+  {
+    ssr: false,
+  }
+);
+const ContactMiddleSection = dynamic(
+  () => import("@/components/Contact/NewContact/ContactMiddleSection"),
+  {
+    ssr: false,
+  }
+);
+const ContactTopSection = dynamic(
+  () => import("@/components/Contact/NewContact/ContactTopSection"),
+  {
+    ssr: false,
+  }
+);
+const NewFooter = dynamic(() => import("@/components/Footer/NewFooter"), {
+  ssr: false,
+});
 
-// import MapSection from "@/components/Contact/NewContact/MapSection";
-import NewFooter from "@/components/Footer/NewFooter";
-import NewHeader from "@/components/NewHeader/NewHeader";
 import useFetch from "@/hooks/useFetch";
 import LoadingAnimation from "@/util/LoadingAnimation";
+import dynamic from "next/dynamic";
 
 function ContactPage() {
   const { data: services, loading } = useFetch(
@@ -26,7 +45,6 @@ function ContactPage() {
         <NewHeader />
         <ContactTopSection />
         <ContactMiddleSection />
-        {/* <MapSection /> */}
         <ContactForm services={services} />
         <NewFooter />
       </div>

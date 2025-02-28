@@ -38,7 +38,7 @@ function Section10({ data }) {
       );
   }, []);
   return (
-    <div className="relative w-screen h-fit bg-white overflow-x-hidden md:pb-14">
+    <div className="relative w-screen h-fit bg-white overflow-x-hidden md:pb-14 pt-8 md:pt-12">
       <div className="relative max-w-screen mx-auto w-full">
         <div
           className={`w-full flex items-center pb-6 ${pathname.includes("/projects") ? " md:pt-12 pt-8" : ""}  h-fit flex-col`}

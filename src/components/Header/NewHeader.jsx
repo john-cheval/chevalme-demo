@@ -3,7 +3,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import logo from "../../../public/logo.svg";
-// import logoWhite from "../../../public/logo_white.svg";
 import logoWhite from "../../../public/Header/logo_white.svg";
 import menu from "../../../public/menu.svg";
 import close from "../../../public/close.svg";
@@ -15,11 +14,9 @@ import whatsapp from "../../../public/whatsapp.png";
 import fb from "../../../public/fb-footer.png";
 import insta from "../../../public/insta-footer.png";
 import linkedin from "../../../public/linkedin-footer.png";
-import useMediaQuery from "@/util/useMediaQuery";
 import { usePathname } from "next/navigation";
 import { Mail, Phone } from "lucide-react";
 function Header() {
-  let isMobile = useMediaQuery("(max-width: 640px)");
   const pathname = usePathname();
   const darkBG = ["/services", "/work"];
   const [showMessage, setShowMessage] = useState(false);
@@ -51,28 +48,16 @@ function Header() {
     const tl = gsap.timeline({
       paused: true,
     });
-    // tl.to("#headerContainer", {
-    //   // duration: 2,
-    //   // ease: Expo.easeOut,
-    //   // boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
-    //   backdropFilter: "blur(16px)",
-    //   borderBottom: "1px solid rgba(0, 0, 0, 0.1)",
-    //   paddingTop: isMobile ? "20px" : "25px",
-    //   paddingBottom: isMobile ? "20px" : "25px",
-    // });
 
     tl.to("#headerContainer", {
       backdropFilter: "blur(16px)",
       backgroundColor: "rgba(255, 255, 255, 0.8)",
       border: "1px solid rgba(255, 255, 255, 0.3)",
       boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
-      // paddingTop: isMobile ? "20px" : "25px",
-      // paddingBottom: isMobile ? "20px" : "25px",
     });
 
     if (pathname === "/") {
       ScrollTrigger.create({
-        // start: `top+=${window.innerHeight * 2.5}`,
         start: "top+=10",
         end: "+=1",
         onEnter: () => {

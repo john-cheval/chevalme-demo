@@ -3,7 +3,6 @@ import Phone from "../../../../public/Contact/call.svg";
 import email from "../../../../public/Contact/mail.svg";
 import location from "../../../../public/Contact/location.svg";
 
-import arrIcon from "../../../../public/Contact/contct/arr_con.svg";
 import facebook from "../../../../public/Contact/contct/fb.svg";
 import instagram from "../../../../public/Contact/contct/insta.svg";
 import linkedin from "../../../../public/Contact/contct/link.svg";
@@ -12,12 +11,6 @@ import React from "react";
 import Image from "next/image";
 
 const ContactMiddleSection = () => {
-  // const scrollToForm = () => {
-  //   const formElement = document.getElementById("contact");
-  //   if (formElement) {
-  //     formElement.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
   return (
     <div className="px-5 sm:px-10 md:px-12 mt-10 md:mt-[75px] lg:mt-[86px]  ">
       <div className="flex md:items-center justify-center flex-col">
@@ -137,14 +130,6 @@ const ContactMiddleSection = () => {
             />
           </Link>
         </div>
-
-        {/* <button onClick={scrollToForm}>
-          <Image
-            src={arrIcon}
-            alt="arrow"
-            className="h-12 w-12 cursor-pointer hidden md:block"
-          />
-        </button> */}
       </div>
     </div>
   );

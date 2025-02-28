@@ -7,7 +7,6 @@ const AboutCTA = ({ ctaHeading, description, VideoUrl }) => {
     <div className=" relative w-screen z-[1111] lg:pt-14 bg-white--">
       <div className="px-5 sm:px-10 md:px-12   ">
         <div className="relative h-[400px] md:h-[454px] flex items-center justify-center rounded-[30px] overflow-hidden ">
-          {/* Background video */}
           <div className="absolute inset-0 z-0">
             <video
               autoPlay
@@ -20,11 +19,9 @@ const AboutCTA = ({ ctaHeading, description, VideoUrl }) => {
               <source src={VideoUrl} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            {/* Dark gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/50 to-black/70"></div>
           </div>
 
-          {/* Content */}
           <div className="relative z-10 flex flex-col items-center space-y-7 text-center text-white">
             <h3 className="text-3xl sm:text-4xl md:text-[44px] font-normal font-sora leading-[133%] tracking-[-1.76px]">
               {ctaHeading}

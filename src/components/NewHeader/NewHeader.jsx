@@ -1,5 +1,4 @@
 "use client";
-// import useMediaQuery from "@/util/useMediaQuery";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
@@ -23,7 +22,6 @@ import BigMenu from "./BigMenu";
 import whatsapp from "../../../public/whatsapp.png";
 
 const NewHeader = () => {
-  // let isMobile = useMediaQuery("(max-width: 640px)");
   const pathname = usePathname();
   const darkBG = ["/services/", "/projects/"];
   const [active, setActive] = useState(pathname);
