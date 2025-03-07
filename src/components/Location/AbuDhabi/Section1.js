@@ -78,10 +78,10 @@ function Section1() {
             </div>
             <div className="flex relative rounded-lg col-span-4 md:col-span-2 lg:col-span-1 bg-[#F2F4F9] w-full h-full">
               <Link href={"/projects"}>
-                <div className="flex absolute top-0 right-0 bg-white my-8 mx-6 items-center justify-between py-2.5 text-[#FF0C15] space-x-2 rounded-[50px] sm:w-fit w-full-- z-20  px-4 border border-[#FF0C15]   font-sora text-center text-sm ">
+                <div className="flex absolute top-0 right-0 bg-white my-3 md:my-8 mx-3 md:mx-6 items-center justify-between py-2.5 text-[#FF0C15] space-x-2 rounded-[50px] w-fit z-20 px-3 md:px-4 border border-[#FF0C15]   font-sora text-center text-xs md:text-sm ">
                   <span className="">Projects </span>
                   <svg
-                    className="w-3.5 object-contain"
+                    className="w-3.5 object-contain hidden md:block"
                     viewBox="0 0 8 8"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ function Section1() {
                 </div>
               </Link>
               <div className="flex w-full  flex-col py-8 space-y-5 px-10">
-                <div className="font-sora w-fit md:my-20 my-5  font-semibold text-[#101763] text-3xl ">
+                <div className="font-sora w-fit md:my-20 mt-5  font-semibold text-[#101763] text-2xl md:text-3xl ">
                   <h3 className="mb-3">WordPress</h3>
                   <div className="h-[1px] w-16 bg-black"></div>
                 </div>
@@ -113,10 +113,10 @@ function Section1() {
             </div>
             <div className="flex relative rounded-lg col-span-4 md:col-span-2 lg:col-span-1 bg-[#F2F4F9] w-full h-full">
               <Link href={"/projects"}>
-                <div className="flex absolute top-0 right-0 bg-white my-8 mx-6 items-center justify-between py-2.5 text-[#FF0C15] space-x-2 rounded-[50px] sm:w-fit w-full-- z-20  px-4 border border-[#FF0C15]   font-sora text-center text-sm ">
+                <div className="flex absolute top-0 right-0 bg-white my-3 md:my-8 mx-3 md:mx-6 items-center justify-between py-2.5 text-[#FF0C15] space-x-2 rounded-[50px] w-fit z-20 px-3 md:px-4 border border-[#FF0C15]   font-sora text-center text-xs md:text-sm">
                   <span className="">Projects </span>
                   <svg
-                    className="w-3.5 object-contain"
+                    className="w-3.5 object-contain hidden md:block"
                     viewBox="0 0 8 8"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ function Section1() {
                 </div>
               </Link>
               <div className="flex w-full  flex-col py-8 space-y-5 px-10">
-                <div className="font-sora w-fit md:my-20 my-5  font-semibold text-[#101763] text-3xl ">
+                <div className="font-sora w-fit md:my-20 mt-5  font-semibold text-[#101763] text-2xl md:text-3xl ">
                   <h3 className="mb-3">SharePoint</h3>
                   <div className="h-[1px] w-16 bg-black"></div>
                 </div>
@@ -146,10 +146,10 @@ function Section1() {
             </div>
             <div className="flex relative rounded-lg col-span-4 md:col-span-2 lg:col-span-1 bg-[#F2F4F9] w-full h-full">
               <Link href={"/projects"}>
-                <div className="flex absolute top-0 right-0 bg-white my-8 mx-6 items-center justify-between py-2.5 text-[#FF0C15] space-x-2 rounded-[50px] sm:w-fit w-full-- z-20  px-4 border border-[#FF0C15]   font-sora text-center text-sm ">
+                <div className="flex absolute top-0 right-0 bg-white my-3 md:my-8 mx-3 md:mx-6 items-center justify-between py-2.5 text-[#FF0C15] space-x-2 rounded-[50px] w-fit z-20 px-3 md:px-4 border border-[#FF0C15]   font-sora text-center text-xs md:text-sm ">
                   <span className="">Projects </span>
                   <svg
-                    className="w-3.5 object-contain"
+                    className="w-3.5 object-contain hidden md:block"
                     viewBox="0 0 8 8"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +162,7 @@ function Section1() {
                 </div>
               </Link>
               <div className="flex w-full  flex-col py-8 space-y-5 px-10">
-                <div className="font-sora w-fit md:my-20 my-5  font-semibold text-[#101763] text-3xl ">
+                <div className="font-sora w-fit md:my-20 mt-5  font-semibold text-[#101763] text-2xl md:text-3xl ">
                   <h3 className="mb-3">PHP</h3>
                   <div className="h-[1px] w-16 bg-black"></div>
                 </div>
@@ -178,10 +178,10 @@ function Section1() {
             <div className="col-span-1 hidden lg:block"></div>
             <div className="flex relative rounded-lg col-span-4 md:col-span-2 lg:col-span-1 bg-[#F2F4F9] w-full h-full">
               <Link href={"/projects"}>
-                <div className="flex absolute top-0 right-0 bg-white my-8 mx-6 items-center justify-between py-2.5 text-[#FF0C15] space-x-2 rounded-[50px] sm:w-fit w-full-- z-20  px-4 border border-[#FF0C15]   font-sora text-center text-sm ">
+                <div className="flex absolute top-0 right-0 bg-white my-3 md:my-8 mx-3 md:mx-6 items-center justify-between py-2.5 text-[#FF0C15] space-x-2 rounded-[50px] w-fit z-20 px-3 md:px-4 border border-[#FF0C15]   font-sora text-center text-xs md:text-sm">
                   <span className="">Projects </span>
                   <svg
-                    className="w-3.5 object-contain"
+                    className="w-3.5 object-contain hidden md:block"
                     viewBox="0 0 8 8"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -194,7 +194,7 @@ function Section1() {
                 </div>
               </Link>
               <div className="flex w-full  flex-col py-8 space-y-5 px-10">
-                <div className="font-sora w-fit md:my-20 my-5  font-semibold text-[#101763] text-3xl ">
+                <div className="font-sora w-fit md:my-20 mt-5  font-semibold text-[#101763] text-2xl md:text-3xl ">
                   <h3 className="mb-3">Joomla</h3>
                   <div className="h-[1px] w-16 bg-black"></div>
                 </div>

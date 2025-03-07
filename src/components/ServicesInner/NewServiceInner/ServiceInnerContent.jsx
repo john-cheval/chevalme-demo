@@ -36,7 +36,7 @@ const ServiceInnerContent = ({ services, serviceHeading }) => {
       <div className="bg-black-- rounded-tr-[30px] rounded-tl-[30px] relative ">
         <div className="md:pt-12-- pt-9--">
           <h2
-            className="text-[#101763] font-sora text-lg md:text-3xl lg:text-4xl leading-[135%] tracking-[-0.4px] font-semibold mb-5 md:mb-12 sm:px-14-- text-center sm:text-left pinned-section sticky top-[12vh] md:pt-12 pb-3-- pt-9"
+            className="text-[#101763] font-sora text-lg md:text-3xl lg:text-4xl leading-[135%] tracking-[-0.4px] font-semibold mb-5 md:mb-12 text-left sm:text-left pinned-section sticky top-[12vh] md:pt-12 pb-3-- pt-9"
             style={{ top: isNavVisible ? "8vh  " : "0" }}
           >
             {serviceHeading}
@@ -77,7 +77,7 @@ const ServiceInnerContent = ({ services, serviceHeading }) => {
                       {item?.link && (
                         <Link
                           href={item?.link}
-                          className="text-[#d81100] mt-10- inline-block"
+                          className="text-[#d81100]  inline-block"
                         >
                           <ArrowRight size={40} />
                         </Link>

@@ -16,7 +16,7 @@ function LocationFaq({ data }) {
           <div className="w-full">
             <h3
               style={{}}
-              className="font-sora font-semibold text-[#101763] text-3xl lg:text-4xl text-center lg:text-left  leading-normal "
+              className="font-sora font-semibold text-[#101763] text-3xl lg:text-4xl text-left  leading-normal "
             >
               <span
                 style={{

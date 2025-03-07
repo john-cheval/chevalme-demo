@@ -16,7 +16,7 @@ const SectionList = ({ data, ID }) => {
               </h5>
               <p
                 dangerouslySetInnerHTML={{ __html: section?.description }}
-                className="font-satoshi text-center md:text-start text-xl paragraphText-Size w-full md:w-1/2 lg:w-[65%]"
+                className="font-satoshi text-center md:text-start   text-[15px] md:text-base  w-full md:w-1/2 lg:w-[65%] "
               />
             </div>
           )}

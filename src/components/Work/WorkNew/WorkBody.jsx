@@ -83,7 +83,7 @@ const WorkBody = ({ data, categories }) => {
             className="group duration-300 transition-all cursor-pointer"
           >
             <div
-              className={`h-[60px] w-[60px]  rounded-full ${workFilter === "Explore All" ? "border-[1px] border-[#d81100] p-[2px]" : ""}`}
+              className={`h-[60px] w-[60px]  rounded-full ${workFilter === "Explore All" ? "border-[1px] border-[#d81100] p-[2px] " : ""}`}
             >
               <Image
                 src={chevalImage}
@@ -95,7 +95,7 @@ const WorkBody = ({ data, categories }) => {
               />
             </div>
             <p
-              className={`text-center text-[12px] font-satoshi leading-[154%]  mt-2 group-hover:text-[#d81100] duration-300 transition-all ${workFilter === "Explore All" ? "text-[#d81100]" : "text-[#101763]"}`}
+              className={`text-center text-[12px] font-satoshi leading-[154%]  mt-2 group-hover:text-[#d81100]  duration-300 transition-all ${workFilter === "Explore All" ? "text-[#d81100]" : "text-[#101763]"}`}
             >
               All
             </p>
@@ -111,7 +111,7 @@ const WorkBody = ({ data, categories }) => {
               className="group duration-300 transition-all cursor-pointer"
             >
               <div
-                className={`h-[60px] w-[60px]  rounded-full ${workFilter === work?.name ? "border-[1px] border-[#d81100] p-[2px]" : ""}`}
+                className={`h-[60px] w-[60px]  rounded-full ${workFilter === work?.name ? "border-[1px] border-[#d81100] p-[2px] " : ""}`}
               >
                 <Image
                   src={work?.icon_image}

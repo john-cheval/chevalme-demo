@@ -63,7 +63,7 @@ const ContactForm = ({ services, title }) => {
     <div
       ref={formRef}
       id="contact"
-      className={`px-5 sm:px-10 md:px-12 pt-8 md:pt-12--  pb-24-- ${router.includes("service") ? "md:pt-24 pb-28" : "md:pt-12 pb-24"} bg-white `}
+      className={`px-5 sm:px-10 md:px-12 pt-8 ${router.includes("service") ? "md:pt-24 pb-12" : "md:pt-12 pb-12 "} bg-white `}
     >
       <div className="lg:space-y-[57px] md:space-y-10 space-y-6 flex flex-col sm:justify-center sm:items-center">
         <div className="space-y-2 flex items-center justify-center flex-col">

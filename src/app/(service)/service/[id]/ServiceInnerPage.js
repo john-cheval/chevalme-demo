@@ -1,16 +1,43 @@
 /** @format */
 "use client";
 import React, { useEffect, useState } from "react";
-import NewFooter from "@/components/Footer/NewFooter";
-import NewHeader from "@/components/NewHeader/NewHeader";
-import ServiceAccordion from "@/components/ServicesInner/NewServiceInner/ServiceAccordion";
-import ServiceInnerContent from "@/components/ServicesInner/NewServiceInner/ServiceInnerContent";
-import ServiceInnerSwipper from "@/components/ServicesInner/NewServiceInner/ServiceInnerSwipper";
-import ServiceInnerTechStack from "@/components/ServicesInner/NewServiceInner/ServiceInnerTechStack";
-import ServiceSectionTwo from "@/components/ServicesInner/NewServiceInner/ServiceSectionTwo";
 import useFetch from "@/hooks/useFetch";
 import LoadingAnimation from "@/util/LoadingAnimation";
-import ContactForm from "@/components/Contact/NewContact/ContactForm";
+import dynamic from "next/dynamic";
+
+const NewHeader = dynamic(() => import("@/components/NewHeader/NewHeader"), {
+  ssr: false,
+});
+const NewFooter = dynamic(() => import("@/components/Footer/NewFooter"), {
+  ssr: false,
+});
+const ServiceAccordion = dynamic(
+  () => import("@/components/ServicesInner/NewServiceInner/ServiceAccordion"),
+  { ssr: false }
+);
+const ServiceInnerContent = dynamic(
+  () =>
+    import("@/components/ServicesInner/NewServiceInner/ServiceInnerContent"),
+  { ssr: false }
+);
+const ServiceInnerSwipper = dynamic(
+  () =>
+    import("@/components/ServicesInner/NewServiceInner/ServiceInnerSwipper"),
+  { ssr: false }
+);
+const ServiceInnerTechStack = dynamic(
+  () =>
+    import("@/components/ServicesInner/NewServiceInner/ServiceInnerTechStack"),
+  { ssr: false }
+);
+const ServiceSectionTwo = dynamic(
+  () => import("@/components/ServicesInner/NewServiceInner/ServiceSectionTwo"),
+  { ssr: false }
+);
+const ContactForm = dynamic(
+  () => import("@/components/Contact/NewContact/ContactForm"),
+  { ssr: false }
+);
 
 function ServicesInnerPage({ serviceId }) {
   const [split, setSplit] = useState(null);

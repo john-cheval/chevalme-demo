@@ -3,8 +3,6 @@
  * @type {import('next').NextConfig}
  */
 
-import TerserPlugin from "terser-webpack-plugin";
-
 const nextConfig = {
   trailingSlash: true,
   async rewrites() {
@@ -50,10 +48,6 @@ const nextConfig = {
         hostname: "bunny-wp-pullzone-1uo9uvm3si.b-cdn.net",
       },
     ],
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
   },
 
   webpack(config) {

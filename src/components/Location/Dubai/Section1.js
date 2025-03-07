@@ -214,7 +214,7 @@ function Section1() {
             </div>
           </div>
         </div>
-        <div className="w-full h-screen relative flex items-center justify-center">
+        <div className="w-full h-full py-10 lg:h-screen lg:py-0 relative flex items-center justify-center">
           <Image
             src={image6}
             className="object-cover w-[60%] absolute top-0 left-0 h-full object-left hidden lg:block"
@@ -487,7 +487,7 @@ function Section1() {
           <div className="w-full grid grid-cols-3 gap-4 grid-flow-row h-fit">
             <h3
               style={{}}
-              className="font-sora col-span-3 lg:col-span-1 font-semibold lg:pr-5 text-[#101763] text-3xl md:text-4xl lg:text-5xl  leading-tight text-center lg:text-left "
+              className="font-sora col-span-3 lg:col-span-1 font-semibold lg:pr-5 text-[#101763] text-3xl md:text-4xl lg:text-5xl  leading-tight text-left "
             >
               Industries <br className="hidden lg:block" /> We Serve
             </h3>
